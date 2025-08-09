@@ -82,20 +82,23 @@ const tarifs = [{
   price: "150 €"
 }, {
   label: "Fratries (à partir du 2ème enfant)",
-  price: "135 €"
+  price: "90 € ou 135 €"
 }, {
   label: "Séniors (né(e)s en 2007 et avant)",
   price: "200 €"
 }];
 const calendars = [{
   label: "Séniors",
-  url: "https://calendar.google.com/calendar/u/0?cid=NzY5YWQzNDhkYjc2YTRlODg5NGYwZDRhNjhkOTVjZWUxOWJmMTZmZThmMDEwNjY5OWUzOGZjMzI1MDkzYzU5ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+  url: "https://calendar.google.com/calendar/ical/fdee024de7152bc6a1cb0223655f4ffdee60ccbed3176e1f519629784de20e4a%40group.calendar.google.com/public/basic.ics"
 }, {
   label: "U18",
-  url: "https://calendar.google.com/calendar/u/0?cid=ZGJiOGZlOTA1YjgwZGQ5YTc5MTdlZmFlYTkyOTQ1YTZiYTk5MmZmMGU2ODQ3YzI4MGZhNzRhYjhmZGVlMzk1M0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+  url: "https://calendar.google.com/calendar/ical/02e4b51b6158592872bd32c184e0d05fd75480ee1893fc293ab3cbc5c8f1cc13%40group.calendar.google.com/public/basic.ics"
 }, {
   label: "U16",
-  url: "https://calendar.google.com/calendar/u/0?cid=YmI0NTc5ODdkMGViMzQ3MmQzYjZjZDc1ODk3ZTliNTdmMjMxNTVlNTMzNzlmNzUyZDM0YjYyNjRiZDlmNTY5YkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+  url: "https://calendar.google.com/calendar/ical/98cb0fbe3bdfc2fd4eb65887b777f3c2adde03decaf3788157877eef0f2d90ff%40group.calendar.google.com/public/basic.ics"
+}, {
+  label: "U14",
+  url: "https://calendar.google.com/calendar/ical/68104c0ae5dc00fd5e7e924d2dec3e42399be44fd265d1a3468adca34fa1bd33%40group.calendar.google.com/public/basic.ics"
 }];
 const Info = () => {
   return <div className="w-full py-8">
@@ -143,7 +146,7 @@ const Info = () => {
           <h2 className="text-3xl font-bold text-center mb-4 text-hc-green">
             Horaires d'entraînement
           </h2>
-          <p className="text-center text-muted-foreground mb-12">Saison 2024 - 2025</p>
+          <p className="text-center text-muted-foreground mb-12">Saison 2025 - 2026</p>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {trainingSchedule.map((training, index) => <Card key={index} className="hover:shadow-md transition-shadow">
                 <CardContent className="p-6">
@@ -170,7 +173,17 @@ const Info = () => {
         {/* Agendas Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-12 text-hc-orange">Agendas</h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <a 
+              href="https://www.handballbelgium.be/index.php/competition/vhv-competitions/?season_id=5&organization_id=2&start_date=2025-07-21&end_date=2025-07-27&club_id=112&serie_tab=fullCalendar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-hc-green text-white px-6 py-3 rounded-lg hover:bg-hc-green/80 transition-colors font-medium inline-block"
+            >
+              Calendrier du club
+            </a>
+          </div>
+          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {calendars.map(cal => <div key={cal.label} className="flex flex-col items-center bg-hc-green-light/10 p-6 rounded-lg shadow-sm">
                 <div className="text-xl font-semibold text-hc-green mb-4">{cal.label}</div>
                 <a href={cal.url} target="_blank" rel="noopener noreferrer" className="bg-hc-orange text-white px-4 py-2 rounded hover:bg-hc-orange/80 transition-colors font-medium mt-auto">
@@ -202,7 +215,17 @@ const Info = () => {
               </div>
               <div className="mt-2 text-sm text-muted-foreground">
                 Merci d'indiquer le nom et prénom du joueur en communication.<br />
-                Paiement avant le <span className="font-semibold text-hc-orange">30/09/25</span>
+                Paiement avant le <span className="font-semibold text-hc-orange">30/09/26</span>
+              </div>
+            </div>
+            <div className="bg-hc-orange/10 p-4 rounded-lg shadow mb-4">
+              <div className="font-medium mb-1 text-hc-orange">
+                Transfert international
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Pour les joueurs qui ont plus de 16 ans et qui ont été affiliés dans<br />
+                un club d'une fédération hors de la Belgique dans les 2 années qui précèdent.<br />
+                <span className="font-semibold text-hc-orange">Contacter le comité</span>
               </div>
             </div>
             <div className="italic text-muted-foreground text-sm">
@@ -258,20 +281,16 @@ const Info = () => {
             Téléchargements utiles
           </h2>
           <div className="flex flex-col md:flex-row justify-center gap-6 mb-4">
-            <a href="https://drive.google.com/file/d/1Z5f29NA636bP7u8egB8dI44vWgYCAQN2/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="inline-block">
+            <a href="https://www.handballbelgium.be/wp-content/uploads/2025/07/Affiliation-Demande.pdf" target="_blank" rel="noopener noreferrer" className="inline-block">
               <button className="bg-hc-orange hover:bg-hc-orange/80 text-white font-medium px-6 py-3 rounded-lg shadow transition-all w-full md:w-auto">
                 Télécharger la fiche d'affiliation (PDF)
               </button>
             </a>
-            <a href="https://drive.google.com/file/d/1kqxLUl4IiAW-ZD-7Fx7foLRVvnhq9hhu/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="inline-block">
+            <a href="https://www.handballbelgium.be/wp-content/uploads/2025/07/Trasnfert-Formulaire-demande-transfert-international-2025-2026.pdf" target="_blank" rel="noopener noreferrer" className="inline-block">
               <button className="bg-hc-green hover:bg-hc-green/80 text-white font-medium px-6 py-3 rounded-lg shadow transition-all w-full md:w-auto">
                 Télécharger le formulaire de transfert international (PDF)
               </button>
             </a>
-          </div>
-          <div className="text-center text-muted-foreground text-sm">
-            Documents hébergés sur Google Drive.&nbsp;
-            <span className="italic">Téléchargement public : seul le fichier est accessible, aucun autre document ne l'est.</span>
           </div>
         </section>
       </div>
