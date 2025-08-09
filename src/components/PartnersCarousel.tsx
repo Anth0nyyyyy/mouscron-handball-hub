@@ -57,7 +57,7 @@ const PartnersCarousel = () => {
                       : 'scale-100 opacity-60'
                   }`}
                 >
-                  <div className="w-32 h-24 bg-white rounded-lg flex items-center justify-center border border-gray-200 group-hover:border-green-600 transition-colors p-2">
+                  <div className="w-40 h-32 bg-white rounded-lg flex items-center justify-center border border-gray-200 group-hover:border-green-600 transition-colors p-2">
                     <img 
                       src={partner.logo} 
                       alt={`${partner.name} logo`}

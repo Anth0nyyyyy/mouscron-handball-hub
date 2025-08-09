@@ -266,7 +266,14 @@ const Home = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     <div className="bg-gradient-to-r from-green-600 to-green-800 text-white p-6 rounded-2xl shadow-xl transform hover:scale-105 transition-transform">
                       <p className="font-black text-xl">🏟️ HALL MAX LESSINES</p>
-                      <p className="text-green-100 text-lg">RUE DES PRÉS 84B, MOUSCRON</p>
+                      <a 
+                        href="https://www.google.com/maps/search/?api=1&query=Hall+Max+Lessines,+Rue+des+Prés+84B,+7700+Mouscron,+Belgium"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-green-100 text-lg hover:text-yellow-200 transition-colors cursor-pointer"
+                      >
+                        RUE DES PRÉS 84B, MOUSCRON
+                      </a>
                     </div>
                     <div className="bg-gradient-to-r from-amber-600 to-orange-600 text-white p-6 rounded-2xl shadow-xl transform hover:scale-105 transition-transform">
                       <p className="font-black text-xl">

@@ -69,7 +69,7 @@ const Partners = () => {
                   <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-2 hover:border-green-600">
                     <CardContent className="p-8 text-center">
                       <div className="mb-6 flex justify-center">
-                        <div className="w-40 h-32 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200 group-hover:border-green-600 transition-colors p-2">
+                        <div className="w-48 h-40 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200 group-hover:border-green-600 transition-colors p-2">
                           <img src={partner.logo} alt={`${partner.name} logo`} className="max-w-full max-h-full object-contain" />
                         </div>
                       </div>
