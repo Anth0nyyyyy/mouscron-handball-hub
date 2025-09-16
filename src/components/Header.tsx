@@ -12,7 +12,8 @@ const Header = () => {
     { name: 'Équipe', href: '/equipe' },
     { name: 'Partenaires', href: '/partenaires' },
     { name: 'Infos', href: '/infos' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Contact', href: '/contact' },
+    { name: 'Coachs', href: '/espace-coachs' }
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -22,7 +23,7 @@ const Header = () => {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8">
         {/* Navigation gauche - Desktop */}
         <div className="hidden lg:flex lg:gap-x-8 lg:flex-1 lg:justify-start">
-          {navigation.slice(0, 3).map(item => (
+          {navigation.slice(0, 2).map(item => (
             <Link 
               key={item.name} 
               to={item.href} 
@@ -49,7 +50,7 @@ const Header = () => {
         {/* Navigation droite - Desktop */}
         <div className="hidden lg:flex lg:gap-x-8 lg:flex-1 lg:justify-end lg:items-center">
           <div className="flex gap-x-8">
-            {navigation.slice(3, 5).map(item => (
+            {navigation.slice(2).map(item => (
               <Link 
                 key={item.name} 
                 to={item.href} 
