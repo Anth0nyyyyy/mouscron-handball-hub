@@ -236,53 +236,6 @@ const EspaceCoachs = () => {
               </Button>
             </CardContent>
           </Card>
-
-          {/* Ressources pédagogiques */}
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardHeader>
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-hc-orange/10 rounded-lg">
-                  <FileText className="h-6 w-6 text-hc-orange" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">Ressources pédagogiques</CardTitle>
-                  <p className="text-sm text-muted-foreground">Documents et guides</p>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                Guides d'entraînement, règlements et documents pédagogiques.
-              </p>
-              <Button variant="outline" className="w-full" disabled>
-                Bientôt disponible
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Gestion des équipes */}
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardHeader>
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-amber-500/10 rounded-lg">
-                  <Users className="h-6 w-6 text-amber-600" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">Gestion des équipes</CardTitle>
-                  <p className="text-sm text-muted-foreground">Effectifs et compositions</p>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                Gérez vos effectifs et planifiez vos compositions d'équipe.
-              </p>
-              <Button variant="outline" className="w-full" disabled>
-                Bientôt disponible
-              </Button>
-            </CardContent>
-          </Card>
-
         </div>
 
         {/* Section informations */}

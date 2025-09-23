@@ -7,10 +7,13 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const navigation = [
+  const leftNavigation = [
     { name: 'Accueil', href: '/' },
     { name: 'Équipe', href: '/equipe' },
-    { name: 'Partenaires', href: '/partenaires' },
+    { name: 'Partenaires', href: '/partenaires' }
+  ];
+
+  const rightNavigation = [
     { name: 'Infos', href: '/infos' },
     { name: 'Contact', href: '/contact' },
     { name: 'Coachs', href: '/espace-coachs' }
@@ -23,7 +26,7 @@ const Header = () => {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8">
         {/* Navigation gauche - Desktop */}
         <div className="hidden lg:flex lg:gap-x-8 lg:flex-1 lg:justify-start">
-          {navigation.slice(0, 2).map(item => (
+          {leftNavigation.map(item => (
             <Link 
               key={item.name} 
               to={item.href} 
@@ -36,7 +39,7 @@ const Header = () => {
           ))}
         </div>
 
-        {/* Logo centré avec fond blanc fin */}
+        {/* Logo centré */}
         <div className="flex-shrink-0">
           <Link to="/" className="flex items-center">
             <img 
@@ -48,46 +51,18 @@ const Header = () => {
         </div>
 
         {/* Navigation droite - Desktop */}
-        <div className="hidden lg:flex lg:gap-x-8 lg:flex-1 lg:justify-end lg:items-center">
-          <div className="flex gap-x-8">
-            {navigation.slice(2).map(item => (
-              <Link 
-                key={item.name} 
-                to={item.href} 
-                className={`text-white font-bold text-lg hover:text-yellow-200 transition-colors drop-shadow-md px-2 py-1 rounded ${
-                  isActive(item.href) ? 'text-yellow-200 bg-white/10' : ''
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-          
-          {/* Social Links */}
-          <div className="flex gap-x-4 ml-6">
-            <Button variant="ghost" size="sm" asChild>
-              <a 
-                href="https://www.facebook.com/HCMouscron" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Facebook" 
-                className="text-white hover:bg-white/20 hover:scale-110 drop-shadow-md p-2 rounded-full transition-all duration-300"
-              >
-                <img src="/lovable-uploads/b2e8bfa2-ec84-4d63-8d58-503664da7229.png" alt="Facebook" className="h-10 w-10" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <a 
-                href="https://www.instagram.com/hcmouscron/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-white hover:bg-white/20 hover:scale-110 drop-shadow-md p-2 rounded-full transition-all duration-300" 
-                aria-label="Instagram"
-              >
-                <img src="/lovable-uploads/e132c7e8-e206-404e-b6fb-60edb8e0d181.png" alt="Instagram" className="h-10 w-10" />
-              </a>
-            </Button>
-          </div>
+        <div className="hidden lg:flex lg:gap-x-8 lg:flex-1 lg:justify-end">
+          {rightNavigation.map(item => (
+            <Link 
+              key={item.name} 
+              to={item.href} 
+              className={`text-white font-bold text-lg hover:text-yellow-200 transition-colors drop-shadow-md px-2 py-1 rounded ${
+                isActive(item.href) ? 'text-yellow-200 bg-white/10' : ''
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
 
         {/* Mobile menu button */}
@@ -107,7 +82,7 @@ const Header = () => {
       {isMenuOpen && (
         <div className="lg:hidden animate-slide-in">
           <div className="space-y-1 px-4 pb-4 pt-2 bg-gradient-to-r from-green-800 via-green-600 to-amber-600 border-t border-white/20">
-            {navigation.map(item => (
+            {[...leftNavigation, ...rightNavigation].map(item => (
               <Link 
                 key={item.name} 
                 to={item.href} 
@@ -119,30 +94,6 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <div className="flex gap-x-4 px-3 py-2">
-              <Button variant="ghost" size="sm" asChild>
-                <a 
-                  href="https://www.facebook.com/HCMouscron" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-white hover:bg-white/20 hover:scale-110 drop-shadow-md p-2 rounded-full transition-all duration-300" 
-                  aria-label="Facebook"
-                >
-                  <img src="/lovable-uploads/b2e8bfa2-ec84-4d63-8d58-503664da7229.png" alt="Facebook" className="h-8 w-8" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="sm" asChild>
-                <a 
-                  href="https://www.instagram.com/hcmouscron/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-white hover:bg-white/20 hover:scale-110 drop-shadow-md p-2 rounded-full transition-all duration-300" 
-                  aria-label="Instagram"
-                >
-                  <img src="/lovable-uploads/e132c7e8-e206-404e-b6fb-60edb8e0d181.png" alt="Instagram" className="h-8 w-8" />
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
       )}
