@@ -6,12 +6,11 @@
 
 Pour lancer le projet sur votre machine en local, suivez ces étapes.
 
-**Prérequis :**
+# **Prérequis :**
 Assurez-vous d'avoir [Node.js](https://nodejs.org/) (version 18 ou supérieure) et npm installés.
 
-**Installation :**
+# **Installation :**
 
-sh
 # 1. Clonez ce dépôt
 git clone https://github.com/Anth0nyyyyy/mouscron-handball-hub.git
 
