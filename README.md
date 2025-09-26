@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+Mouscron site Web
+    "Ce projet est un site vitrine que je développe en tant qu'étudiant pour mon club de handball, HC Mouscron, afin de moderniser sa présence en ligne."
+🚀 Démarrage Rapide
 
-## Project info
+Pour commencer à travailler sur ce projet en local, suivez ces étapes.
 
-**URL**: https://lovable.dev/projects/b46115b9-279f-4773-bbf5-fa630955e654
+Prérequis :
+Assurez-vous d'avoir Node.js (version 18 ou supérieure) et npm installés sur votre machine.
 
-## How can I edit this code?
+Installation :
+code Sh
 
-There are several ways of editing your application.
+    
+# 1. Clonez ce dépôt sur votre machine locale
+git clone https://github.com/Anth0nyyyyy/mouscron-handball-hub.git
 
-**Use Lovable**
+# 2. Naviguez dans le répertoire du projet
+cd mouscron-handball-hub
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b46115b9-279f-4773-bbf5-fa630955e654) and start prompting.
+# 3. Installez toutes les dépendances nécessaires
+npm install
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Lancez le serveur de développement
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+  
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Votre application sera maintenant accessible à l'adresse http://localhost:5173 (ou un port similaire). Le serveur se rechargera automatiquement à chaque modification de fichier.
+🛠️ Technologies utilisées
 
-**Use GitHub Codespaces**
+Ce projet est construit avec les technologies suivantes :
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+    Vite - Un outil de build frontend nouvelle génération.
 
-## What technologies are used for this project?
+    TypeScript - Un sur-ensemble de JavaScript qui ajoute un typage statique.
 
-This project is built with:
+    React - Une bibliothèque JavaScript pour construire des interfaces utilisateur.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+    shadcn/ui - Des composants d'interface utilisateur réutilisables.
 
-## How can I deploy this project?
+    Tailwind CSS - Un framework CSS "utility-first" pour un design rapide.
 
-Simply open [Lovable](https://lovable.dev/projects/b46115b9-279f-4773-bbf5-fa630955e654) and click on Share -> Publish.
+🌐 Déploiement
 
-## Can I connect a custom domain to my Lovable project?
+Ce projet est une application web statique et peut être déployé facilement sur de nombreuses plateformes d'hébergement.
 
-Yes, you can!
+Les options populaires incluent :
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+    Vercel
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+    Netlify
+
+    GitHub Pages
+
+Instructions générales pour le déploiement (avec Vercel ou Netlify) :
+
+    Poussez votre code sur votre dépôt GitHub.
+
+    Créez un compte sur Vercel ou Netlify et connectez-le à votre compte GitHub.
+
+    Importez votre dépôt GitHub en tant que nouveau projet.
+
+    Configurez les paramètres de build :
+
+        Build Command: npm run build
+
+        Output Directory: dist
+
+    Cliquez sur "Deploy". La plateforme s'occupera du reste.
+
+Une fois déployé, vous pourrez connecter un nom de domaine personnalisé directement depuis les paramètres de votre hébergeur.
