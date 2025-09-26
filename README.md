@@ -1,6 +1,7 @@
 Mouscron site Web
+
     "Ce projet est un site vitrine que je développe en tant qu'étudiant pour mon club de handball, HC Mouscron, afin de moderniser sa présence en ligne."
-🚀 Démarrage Rapide
+Démarrage Rapide
 
 Pour commencer à travailler sur ce projet en local, suivez ces étapes.
 
@@ -26,7 +27,7 @@ npm run dev
   
 
 Votre application sera maintenant accessible à l'adresse http://localhost:5173 (ou un port similaire). Le serveur se rechargera automatiquement à chaque modification de fichier.
-🛠️ Technologies utilisées
+Technologies utilisées
 
 Ce projet est construit avec les technologies suivantes :
 
@@ -40,7 +41,7 @@ Ce projet est construit avec les technologies suivantes :
 
     Tailwind CSS - Un framework CSS "utility-first" pour un design rapide.
 
-🌐 Déploiement
+ Déploiement
 
 Ce projet est une application web statique et peut être déployé facilement sur de nombreuses plateformes d'hébergement.
 
