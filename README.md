@@ -1,72 +1,57 @@
-Mouscron site Web
+# Site Web du HC Mouscron
 
-    "Ce projet est un site vitrine que je développe en tant qu'étudiant pour mon club de handball, HC Mouscron, afin de moderniser sa présence en ligne."
-Démarrage Rapide
+> Ce projet est un site vitrine que je développe en tant qu'étudiant pour mon club de handball, le HC Mouscron, afin de moderniser sa présence en ligne.
 
-Pour commencer à travailler sur ce projet en local, suivez ces étapes.
+##  Démarrage Rapide
 
-Prérequis :
-Assurez-vous d'avoir Node.js (version 18 ou supérieure) et npm installés sur votre machine.
+Pour lancer le projet sur votre machine en local, suivez ces étapes.
 
-Installation :
-code Sh
+**Prérequis :**
+Assurez-vous d'avoir [Node.js](https://nodejs.org/) (version 18 ou supérieure) et npm installés.
 
-    
-# 1. Clonez ce dépôt sur votre machine locale
+**Installation :**
+
+sh
+# 1. Clonez ce dépôt
 git clone https://github.com/Anth0nyyyyy/mouscron-handball-hub.git
 
 # 2. Naviguez dans le répertoire du projet
 cd mouscron-handball-hub
 
-# 3. Installez toutes les dépendances nécessaires
+# 3. Installez les dépendances
 npm install
 
 # 4. Lancez le serveur de développement
 npm run dev
 
-  
+Le site sera alors visible à l'adresse http://localhost:5173. Le rechargement automatique est activé pour chaque modification du code.
 
-Votre application sera maintenant accessible à l'adresse http://localhost:5173 (ou un port similaire). Le serveur se rechargera automatiquement à chaque modification de fichier.
-Technologies utilisées
+# Technologies Utilisées
 
-Ce projet est construit avec les technologies suivantes :
+Ce projet est construit avec un stack moderne pour garantir performance et une bonne expérience utilisateur :
 
-    Vite - Un outil de build frontend nouvelle génération.
+    Vite : Outil de build frontend ultra-rapide.
 
-    TypeScript - Un sur-ensemble de JavaScript qui ajoute un typage statique.
+    React : Bibliothèque JavaScript pour la construction d'interfaces utilisateur.
 
-    React - Une bibliothèque JavaScript pour construire des interfaces utilisateur.
+    TypeScript : Pour un code plus sûr et plus robuste.
 
-    shadcn/ui - Des composants d'interface utilisateur réutilisables.
+    Tailwind CSS : Framework CSS pour un design rapide et personnalisé.
 
-    Tailwind CSS - Un framework CSS "utility-first" pour un design rapide.
+    shadcn/ui : Collection de composants d'interface utilisateur accessibles.
 
- Déploiement
+    React Router : Pour la gestion des routes et de la navigation (client-side).
 
-Ce projet est une application web statique et peut être déployé facilement sur de nombreuses plateformes d'hébergement.
+    Framer Motion : Pour créer des animations fluides et complexes.
 
-Les options populaires incluent :
+# Déploiement
 
-    Vercel
+Le site est actuellement hébergé chez OVH.
 
-    Netlify
+Pour mettre à jour le site en production, il faut suivre ces étapes :
 
-    GitHub Pages
+    Générer les fichiers statiques optimisés pour la production avec la commande :
+        
+    npm run build
 
-Instructions générales pour le déploiement (avec Vercel ou Netlify) :
-
-    Poussez votre code sur votre dépôt GitHub.
-
-    Créez un compte sur Vercel ou Netlify et connectez-le à votre compte GitHub.
-
-    Importez votre dépôt GitHub en tant que nouveau projet.
-
-    Configurez les paramètres de build :
-
-        Build Command: npm run build
-
-        Output Directory: dist
-
-    Cliquez sur "Deploy". La plateforme s'occupera du reste.
-
-Une fois déployé, vous pourrez connecter un nom de domaine personnalisé directement depuis les paramètres de votre hébergeur.
+    Transférer le contenu du dossier dist (qui vient d'être créé) sur le serveur d'hébergement via un client FTP (comme FileZilla) ou tout autre moyen fourni par OVH.
