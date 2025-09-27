@@ -101,7 +101,7 @@ const entraineursJeunes = [
 
 const categories = [
   { name: "Mini handball", color: "bg-hc-green-light", img: "/lovable-uploads/33033b5b-5d7a-464e-9eb2-7894f00e2b26.png" },
-  { name: "U14", color: "bg-hc-green-light" },
+  { name: "U14", color: "bg-hc-green-light", img: "/lovable-uploads/image.png" },
   { name: "U16", color: "bg-hc-green", img: "/lovable-uploads/faeb26b4-5b82-49e1-8fb0-69a10700de49.png" },
   { name: "U18", color: "bg-hc-green-light", img: "/lovable-uploads/2c5565cf-f45d-4d43-b901-68086906cbad.png" },
   { name: "Seniors", color: "bg-hc-green", img: "/lovable-uploads/a4551830-cf39-4d58-bf31-7325e3117da5.png" },
