@@ -13,7 +13,7 @@ const images = [
   "/lovable-uploads/41bb9730-94a9-4c03-9d26-41eec3e20d2a.png",   // 8. Thierry (corriger si besoin)
 ];
 
-// MAPPING : COMITÉ (ordre modifié)
+// MAPPING : COMITÉ (ordre modifié)
 const bureau = [
   {
     name: "Damien Cockenpot",
@@ -192,7 +192,111 @@ const Team = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-hc-green">
             Nos équipes
           </h2>
-          <div className="flex flex-col items-center gap-10">
+          
+          {/* Layout Desktop 2x3 */}
+          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-12 lg:max-w-6xl lg:mx-auto mb-16">
+            {/* Ligne 1 */}
+            <div className="flex flex-col items-center gap-4">
+              <span className="px-6 py-3 rounded-full bg-hc-green-light text-white text-lg font-semibold shadow text-shadow">
+                Mini handball
+              </span>
+              <div className="flex flex-col items-center">
+                <img
+                  src="/lovable-uploads/33033b5b-5d7a-464e-9eb2-7894f00e2b26.png"
+                  alt="Équipe Mini handball HC Mouscron"
+                  className="w-full max-w-md rounded-2xl shadow-lg border-4 border-hc-green-light animate-fade-in"
+                />
+                <span className="mt-2 text-sm text-muted-foreground italic">
+                  Mini handball - Saison 2025-2026
+                </span>
+              </div>
+            </div>
+            
+            <div className="flex flex-col items-center gap-4">
+              <span className="px-6 py-3 rounded-full bg-hc-green-light text-white text-lg font-semibold shadow text-shadow">
+                U14
+              </span>
+              <div className="flex flex-col items-center">
+                <img
+                  src="/lovable-uploads/image.png"
+                  alt="Équipe U14 HC Mouscron"
+                  className="w-full max-w-md rounded-2xl shadow-lg border-4 border-hc-green-light animate-fade-in"
+                />
+                <span className="mt-2 text-sm text-muted-foreground italic">
+                  U14 - Saison 2025-2026
+                </span>
+              </div>
+            </div>
+
+            {/* Ligne 2 */}
+            <div className="flex flex-col items-center gap-4">
+              <span className="px-6 py-3 rounded-full bg-hc-green text-white text-lg font-semibold shadow text-shadow">
+                U16
+              </span>
+              <div className="flex flex-col items-center">
+                <img
+                  src="/lovable-uploads/faeb26b4-5b82-49e1-8fb0-69a10700de49.png"
+                  alt="Équipe U16 HC Mouscron"
+                  className="w-full max-w-md rounded-2xl shadow-lg border-4 border-hc-green animate-fade-in"
+                />
+                <span className="mt-2 text-sm text-muted-foreground italic">
+                  U16 - Saison 2025-2026
+                </span>
+              </div>
+            </div>
+            
+            <div className="flex flex-col items-center gap-4">
+              <span className="px-6 py-3 rounded-full bg-hc-green-light text-white text-lg font-semibold shadow text-shadow">
+                U18
+              </span>
+              <div className="flex flex-col items-center">
+                <img
+                  src="/lovable-uploads/2c5565cf-f45d-4d43-b901-68086906cbad.png"
+                  alt="Équipe U18 HC Mouscron"
+                  className="w-full max-w-md rounded-2xl shadow-lg border-4 border-hc-green-light animate-fade-in"
+                />
+                <span className="mt-2 text-sm text-muted-foreground italic">
+                  U18 - Saison 2025-2026
+                </span>
+              </div>
+            </div>
+
+            {/* Ligne 3 */}
+            <div className="flex flex-col items-center gap-4">
+              <span className="px-6 py-3 rounded-full bg-hc-green text-white text-lg font-semibold shadow text-shadow">
+                Seniors
+              </span>
+              <div className="flex flex-col items-center">
+                <img
+                  src="/lovable-uploads/a4551830-cf39-4d58-bf31-7325e3117da5.png"
+                  alt="Équipe Seniors HC Mouscron"
+                  className="w-full max-w-md rounded-2xl shadow-lg border-4 border-hc-green animate-fade-in"
+                />
+                <span className="mt-2 text-sm text-muted-foreground italic">
+                  Seniors - Saison 2025-2026
+                </span>
+              </div>
+            </div>
+            
+            <div className="flex flex-col items-center gap-4">
+              <span className="px-6 py-3 rounded-full bg-hc-orange text-white text-lg font-semibold shadow text-shadow">
+                Vétérans / Loisir
+              </span>
+              <div className="flex flex-col items-center">
+                <img
+                  src="/lovable-uploads/3f691e54-6444-4b56-966f-fab9bcea6968.png"
+                  alt="Équipe Vétérans HC Mouscron"
+                  className="w-full max-w-md rounded-2xl shadow-lg border-4 border-hc-orange animate-fade-in"
+                />
+                <span className="mt-2 text-sm text-muted-foreground italic">
+                  Vétérans / Loisir - Saison 2025-2026
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Layout Mobile/Tablet - Version originale */}
+          <div className="flex flex-col items-center gap-10 lg:hidden">
             {categories.map((c) => (
               <div key={c.name} className="flex flex-col items-center gap-2 w-full max-w-xl">
                 <span
@@ -214,25 +318,18 @@ const Team = () => {
                           ? "border-hc-green-light"
                           : c.name === "U16"
                           ? "border-hc-green"
+                          : c.name === "U14"
+                          ? "border-hc-green-light"
                           : c.name === "Mini handball"
                           ? "border-hc-green-light"
                           : "border-gray-300"
                       } animate-fade-in`}
                     />
                     <span className="mt-2 text-sm text-muted-foreground italic">
-                      {c.name} - Saison 2024
+                      {c.name} - Saison 2025-2026
                     </span>
                   </div>
-                ) : (
-                  // Message "À venir..." pour U14 seulement maintenant
-                  c.name === "U14" && (
-                    <div className="flex flex-col items-center mt-4">
-                      <span className="italic text-muted-foreground text-md">
-                        À venir...
-                      </span>
-                    </div>
-                  )
-                )}
+                ) : null}
               </div>
             ))}
           </div>

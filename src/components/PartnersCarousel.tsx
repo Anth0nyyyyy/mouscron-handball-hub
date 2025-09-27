@@ -47,7 +47,8 @@ const PartnersCarousel = () => {
         
         <Link to="/partenaires" className="block group cursor-pointer" onClick={handleClick}>
           <div className="overflow-hidden bg-gradient-to-r from-gray-50 to-white rounded-lg border-2 border-gray-100 group-hover:border-green-600 transition-colors p-8">
-            <div className="flex justify-center items-center space-x-12 animate-fade-in">
+            {/* Desktop - 4 partenaires en ligne */}
+            <div className="hidden md:flex justify-center items-center space-x-12 animate-fade-in">
               {partners.map((partner, index) => (
                 <div 
                   key={index}
@@ -67,6 +68,29 @@ const PartnersCarousel = () => {
                 </div>
               ))}
             </div>
+            
+            {/* Mobile - 2x2 grid */}
+            <div className="md:hidden grid grid-cols-2 gap-6 animate-fade-in">
+              {partners.map((partner, index) => (
+                <div 
+                  key={index}
+                  className={`transition-all duration-500 ${
+                    index === currentIndex 
+                      ? 'scale-105 opacity-100' 
+                      : 'scale-100 opacity-80'
+                  }`}
+                >
+                  <div className="w-full h-24 bg-white rounded-lg flex items-center justify-center border border-gray-200 group-hover:border-green-600 transition-colors p-2">
+                    <img 
+                      src={partner.logo} 
+                      alt={`${partner.name} logo`}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+            
             <div className="text-center mt-6">
               <span className="text-sm text-green-600 font-medium group-hover:text-amber-600 transition-colors">
                 Cliquez pour découvrir tous nos partenaires →
