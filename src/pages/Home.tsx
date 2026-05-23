@@ -52,15 +52,13 @@ const Home = () => {
 
       {/* Section Terrain de Handball - ULTRA SPECTACULAIRE REFAITE DE A À Z */}
       <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-amber-900">
-        {/* Terrain de handball en arrière-plan - HORIZONTAL PARFAIT */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+        {/* Photo du HC Mouscron en arrière-plan */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-25"
           style={{
-            backgroundImage: "url('/lovable-uploads/Terrain_de_hand_vert.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            transform: "rotate(90deg) scale(1.2)"
+            backgroundImage: "url('/image.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center"
           }}
         ></div>
         
