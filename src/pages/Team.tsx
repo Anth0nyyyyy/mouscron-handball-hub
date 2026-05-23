@@ -40,16 +40,6 @@ const bureau = [
     role: "Logistique",
     image: "/lovable-uploads/559c316a-dff9-4e14-bf45-28f2dee1e526.png",
   },
-  {
-    name: "Stijn Tack",
-    role: "Community Manager et Graphisme",
-    image: "/lovable-uploads/72e3c65e-375a-4547-b8e9-c6734b94480d.png",
-  },
-  {
-    name: "Thierry Vincent",
-    role: "Coordinateur Technique",
-    image: "/lovable-uploads/83cc01cc-825a-4c2b-a74c-6b9425279fb9.png",
-  },
 ];
 
 // Remplacement des images pour Laszlo et Thierry :

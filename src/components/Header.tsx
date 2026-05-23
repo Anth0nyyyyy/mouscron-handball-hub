@@ -15,8 +15,7 @@ const Header = () => {
 
   const rightNavigation = [
     { name: 'Infos', href: '/infos' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Coachs', href: '/espace-coachs' }
+    { name: 'Contact', href: '/contact' }
   ];
 
   const isActive = (href: string) => location.pathname === href;

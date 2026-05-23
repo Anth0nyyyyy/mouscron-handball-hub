@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -6,6 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -22,43 +23,27 @@ const ContactForm = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        'https://posfjtzhypekptobqiep.functions.supabase.co/contact-form',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData)
-        }
-      );
-      const data = await response.json();
+      await addDoc(collection(db, 'contacts'), {
+        ...formData,
+        createdAt: serverTimestamp(),
+      });
 
-      if (response.ok) {
-        toast({
-          title: "Message envoyé !",
-          description: "Nous vous répondrons dans les plus brefs délais.",
-        });
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        toast({
-          title: "Erreur lors de l'envoi",
-          description:
-            data?.error
-              ? `Détail : ${data.error}`
-              : "Une erreur est survenue. Merci d'essayer plus tard.",
-          variant: "destructive",
-        });
-      }
+      toast({
+        title: "Message envoyé !",
+        description: "Nous vous répondrons dans les plus brefs délais.",
+      });
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
     } catch (error: any) {
       toast({
-        title: "Erreur réseau",
-        description: "Impossible d'envoyer le message. Vérifiez votre connexion.",
+        title: "Erreur lors de l'envoi",
+        description: error?.message
+          ? `Détail : ${error.message}`
+          : "Une erreur est survenue. Merci d'essayer plus tard.",
         variant: "destructive",
       });
     } finally {
