@@ -15,7 +15,7 @@ const Home = () => {
       <section className="relative h-[70vh] bg-gradient-to-r from-green-800 via-green-600 to-amber-600 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0 bg-cover bg-center" style={{
-          backgroundImage: "url('/lovable-uploads/1ea96fdc-8535-4f8b-a3f9-b4f3755f6633.png')"
+          backgroundImage: "url('/image.png')"
         }}></div>
         <div className="absolute inset-0 bg-gradient-to-r from-green-800/60 via-green-600/50 to-amber-600/60"></div>
         
@@ -52,13 +52,15 @@ const Home = () => {
 
       {/* Section Terrain de Handball - ULTRA SPECTACULAIRE REFAITE DE A À Z */}
       <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-amber-900">
-        {/* Photo du HC Mouscron en arrière-plan */}
+        {/* Terrain de handball en arrière-plan - HORIZONTAL PARFAIT */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-25"
+          className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{
-            backgroundImage: "url('/image.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center"
+            backgroundImage: "url('/lovable-uploads/Terrain_de_hand_vert.png')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            transform: "rotate(90deg) scale(1.2)"
           }}
         ></div>
         
