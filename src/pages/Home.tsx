@@ -38,7 +38,7 @@ const Home = () => {
                 </Button>
               </Link>
               <Link to="/equipe" onClick={handleLinkClick}>
-                <Button size="lg" variant="outline" className="bg-white/90 text-green-800 hover:bg-white border-2 border-white shadow-lg font-semibold w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="bg-white text-green-800 hover:bg-green-800 hover:text-white border-2 border-green-800 shadow-lg font-semibold w-full sm:w-auto transition-colors">
                   Découvrir l'équipe
                 </Button>
               </Link>
@@ -295,7 +295,7 @@ const Home = () => {
                       </Button>
                     </Link>
                     <Link to="/infos" onClick={handleLinkClick}>
-                      <Button size="lg" variant="outline" className="bg-white border-4 border-amber-500 text-amber-700 hover:bg-amber-50 shadow-2xl px-10 py-4 rounded-2xl text-xl font-black transform hover:scale-110 transition-all">
+                      <Button size="lg" variant="outline" className="bg-white border-4 border-amber-500 text-amber-700 hover:bg-amber-600 hover:text-white shadow-2xl px-10 py-4 rounded-2xl text-xl font-black transform hover:scale-110 transition-all">
                         📋 Nos tarifs
                       </Button>
                     </Link>
@@ -358,7 +358,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/infos" onClick={handleLinkClick}>
-                <Button size="lg" variant="secondary" className="bg-white text-green-800 hover:bg-gray-100 shadow-lg font-semibold w-full sm:w-auto border-2 border-white/20">
+                <Button size="lg" variant="secondary" className="bg-white text-green-800 hover:bg-green-800 hover:text-white shadow-lg font-semibold w-full sm:w-auto border-2 border-green-800 transition-colors">
                   Découvrir nos tarifs
                 </Button>
               </Link>
