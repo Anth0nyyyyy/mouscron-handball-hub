@@ -1,19 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import React from 'react';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-// Attribution images :
-const images = [
-  "/lovable-uploads/41bb9730-94a9-4c03-9d26-41eec3e20d2a.png", // 1. Gothane
-  "/lovable-uploads/c65c089e-74e7-498b-bb79-bfbb16be852f.png",   // 2. JP Fabbri
-  "/lovable-uploads/56312c99-84e1-456e-b1a1-0c57fa1fe4d5.png",   // 3. Joaquim
-  "/lovable-uploads/fbc8d64b-b67d-4b11-b658-189c6b6cf531.png",   // 4. Laszlo (NEW IMAGE)
-  "/lovable-uploads/b44b811f-37de-47a2-ac2a-d4ba2d5b0030.png",   // 5. Lucas
-  "/lovable-uploads/365e0e89-3729-4a6f-b74f-c945d205cd46.png",   // 6. Nino
-  "/lovable-uploads/f1b2cda2-2794-414e-8253-3598892a0a4b.png",   // 7. Stijn
-  "/lovable-uploads/41bb9730-94a9-4c03-9d26-41eec3e20d2a.png",   // 8. Thierry (corriger si besoin)
-];
-
-// MAPPING : COMITÉ (ordre modifié)
+// MAPPING : COMITÉ
 const bureau = [
   {
     name: "Damien Cockenpot",
@@ -89,42 +78,43 @@ const entraineursJeunes = [
   },
 ];
 
+// MAPPING DES ÉQUIPES CORRIGÉ
 const categories = [
   {
     name: "Mini handball",
     color: "bg-hc-green-light",
     borderColor: "border-hc-green-light",
-    img: "/lovable-uploads/WhatsApp_Image_2026-05-09_at_22.07.47 copy.jpeg"
+    img: "/lovable-uploads/WhatsApp_Image_2026-04-22_at_21.43.51 copy.jpeg" // Reçoit la photo U18
   },
   {
     name: "U14",
     color: "bg-hc-green-light",
     borderColor: "border-hc-green-light",
-    img: "/lovable-uploads/WhatsApp_Image_2026-04-27_at_10.58.05b copy.jpeg"
+    img: "/lovable-uploads/WhatsApp_Image_2025-11-30_at_14.59.44b copy.jpeg" // Reçoit la photo U16
   },
   {
     name: "U16",
     color: "bg-hc-green",
     borderColor: "border-hc-green",
-    img: "/lovable-uploads/WhatsApp_Image_2025-11-30_at_14.59.44b copy.jpeg"
+    img: "/lovable-uploads/WhatsApp_Image_2026-04-27_at_10.58.05b copy.jpeg" // Reçoit la photo U14
   },
   {
     name: "U18",
     color: "bg-hc-green-light",
     borderColor: "border-hc-green-light",
-    img: "/lovable-uploads/WhatsApp_Image_2026-04-22_at_21.43.51 copy.jpeg"
+    img: "/lovable-uploads/WhatsApp_Image_2025-10-01_at_06.45.20 copy.jpeg" // Reçoit la photo Seniors
   },
   {
     name: "Seniors",
     color: "bg-hc-green",
     borderColor: "border-hc-green",
-    img: "/lovable-uploads/WhatsApp_Image_2025-10-01_at_06.45.20 copy.jpeg"
+    img: "/lovable-uploads/WhatsApp_Image_2026-05-09_at_22.07.47 copy.jpeg" // Reçoit la photo Mini hand
   },
   {
     name: "Vétérans / Loisir",
     color: "bg-hc-orange",
     borderColor: "border-hc-orange",
-    img: "/lovable-uploads/3f691e54-6444-4b56-966f-fab9bcea6968.png"
+    img: "/lovable-uploads/3f691e54-6444-4b56-966f-fab9bcea6968.png" // Reste inchangée
   }
 ];
 
@@ -213,13 +203,13 @@ const Team = () => {
               Nos équipes
             </h2>
 
-            {/* Layout Desktop 2x3 */}
+            {/* Layout Desktop 2x3 (Dynamique et synchronisé) */}
             <div className="hidden lg:grid lg:grid-cols-2 lg:gap-12 lg:max-w-6xl lg:mx-auto mb-16">
               {categories.map((c) => (
                   <div key={c.name} className="flex flex-col items-center gap-4">
-                <span className={`px-6 py-3 rounded-full ${c.color} text-white text-lg font-semibold shadow text-shadow`}>
-                  {c.name}
-                </span>
+                    <span className={`px-6 py-3 rounded-full ${c.color} text-white text-lg font-semibold shadow text-shadow`}>
+                      {c.name}
+                    </span>
                     <div className="flex flex-col items-center">
                       <img
                           src={c.img}
@@ -227,55 +217,38 @@ const Team = () => {
                           className={`w-full max-w-md rounded-2xl shadow-lg border-4 ${c.borderColor} animate-fade-in`}
                       />
                       <span className="mt-2 text-sm text-muted-foreground italic">
-                    {c.name} - Saison 2025-2026
-                  </span>
+                        {c.name} - Saison 2025-2026
+                      </span>
                     </div>
                   </div>
               ))}
             </div>
 
-          {/* Layout Mobile/Tablet - Version originale */}
-          <div className="flex flex-col items-center gap-10 lg:hidden">
-            {categories.map((c) => (
-              <div key={c.name} className="flex flex-col items-center gap-2 w-full max-w-xl">
-                <span
-                  className={`px-6 py-3 rounded-full ${c.color} text-white text-lg font-semibold shadow text-shadow`}
-                >
-                  {c.name}
-                </span>
-                {"img" in c && c.img ? (
-                  <div className="flex flex-col items-center mt-2">
-                    <img
-                      src={c.img}
-                      alt={`Équipe ${c.name} HC Mouscron`}
-                      className={`w-full max-w-md rounded-2xl shadow-lg border-4 ${
-                        c.name === "Vétérans / Loisir"
-                          ? "border-hc-orange"
-                          : c.name === "Seniors"
-                          ? "border-hc-green"
-                          : c.name === "U18"
-                          ? "border-hc-green-light"
-                          : c.name === "U16"
-                          ? "border-hc-green"
-                          : c.name === "U14"
-                          ? "border-hc-green-light"
-                          : c.name === "Mini handball"
-                          ? "border-hc-green-light"
-                          : "border-gray-300"
-                      } animate-fade-in`}
-                    />
-                    <span className="mt-2 text-sm text-muted-foreground italic">
-                      {c.name} - Saison 2025-2026
+            {/* Layout Mobile/Tablet - Dynamique et synchronisé */}
+            <div className="flex flex-col items-center gap-10 lg:hidden">
+              {categories.map((c) => (
+                  <div key={c.name} className="flex flex-col items-center gap-2 w-full max-w-xl">
+                    <span className={`px-6 py-3 rounded-full ${c.color} text-white text-lg font-semibold shadow text-shadow`}>
+                      {c.name}
                     </span>
+                    {c.img ? (
+                        <div className="flex flex-col items-center mt-2">
+                          <img
+                              src={c.img}
+                              alt={`Équipe ${c.name} HC Mouscron`}
+                              className={`w-full max-w-md rounded-2xl shadow-lg border-4 ${c.borderColor} animate-fade-in`}
+                          />
+                          <span className="mt-2 text-sm text-muted-foreground italic">
+                            {c.name} - Saison 2025-2026
+                          </span>
+                        </div>
+                    ) : null}
                   </div>
-                ) : null}
-              </div>
-            ))}
-          </div>
-        </section>
-        {/* Section Palmarès supprimée */}
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
   );
 };
 
