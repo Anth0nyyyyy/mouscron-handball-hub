@@ -150,9 +150,9 @@ const Home = () => {
                   La réussite repose sur le collectif.
                 </p>
                 <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-green-200 group-hover:border-green-400 transition-colors">
-                  <img 
-                    src="/lovable-uploads/a4551830-cf39-4d58-bf31-7325e3117da5.png" 
-                    alt="Équipe seniors unie" 
+                  <img
+                    src="/image copy.png"
+                    alt="Équipe seniors unie"
                     className="w-full h-40 object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-green-600/30 to-transparent"></div>
@@ -331,7 +331,7 @@ const Home = () => {
               <div className="absolute inset-0 bg-green-800/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="relative group">
-              <img src="/lovable-uploads/a4551830-cf39-4d58-bf31-7325e3117da5.png" alt="Seniors HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
+              <img src="/image copy.png" alt="Seniors HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
               <div className="absolute inset-0 bg-green-800/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="relative group">
