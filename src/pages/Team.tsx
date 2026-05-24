@@ -90,11 +90,11 @@ const entraineursJeunes = [
 ];
 
 const categories = [
-  { name: "Mini handball", color: "bg-hc-green-light", img: "/lovable-uploads/WhatsApp_Image_2026-05-09_at_22.07.47 copy.jpeg" },
-  { name: "U14", color: "bg-hc-green-light", img: "/lovable-uploads/WhatsApp_Image_2026-04-27_at_10.58.05b copy.jpeg" },
-  { name: "U16", color: "bg-hc-green", img: "/lovable-uploads/WhatsApp_Image_2025-11-30_at_14.59.44b copy.jpeg" },
-  { name: "U18", color: "bg-hc-green-light", img: "/lovable-uploads/WhatsApp_Image_2026-04-22_at_21.43.51 copy.jpeg" },
-  { name: "Seniors", color: "bg-hc-green", img: "/lovable-uploads/WhatsApp_Image_2025-10-01_at_06.45.20 copy.jpeg" },
+  { name: "Mini handball", color: "bg-hc-green-light", img: "/lovable-uploads/WhatsApp_Image_2026-04-22_at_21.43.51 copy.jpeg" },
+  { name: "U14", color: "bg-hc-green-light", img: "/lovable-uploads/WhatsApp_Image_2025-11-30_at_14.59.44b copy.jpeg" },
+  { name: "U16", color: "bg-hc-green", img: "/lovable-uploads/WhatsApp_Image_2026-04-27_at_10.58.05b copy.jpeg" },
+  { name: "U18", color: "bg-hc-green-light", img: "/lovable-uploads/WhatsApp_Image_2025-10-01_at_06.45.20 copy.jpeg" },
+  { name: "Seniors", color: "bg-hc-green", img: "/lovable-uploads/WhatsApp_Image_2026-05-09_at_22.07.47 copy.jpeg" },
   { name: "Vétérans / Loisir", color: "bg-hc-orange", img: "/lovable-uploads/3f691e54-6444-4b56-966f-fab9bcea6968.png" }
 ];
 
