@@ -121,9 +121,9 @@ const Home = () => {
                   dans un esprit de respect et de fair-play.
                 </p>
                 <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-orange-200 group-hover:border-orange-400 transition-colors">
-                  <img 
-                    src="/lovable-uploads/33033b5b-5d7a-464e-9eb2-7894f00e2b26.png" 
-                    alt="Mini handball en action" 
+                  <img
+                    src="/WhatsApp_Image_2026-04-22_at_21.43.51.jpeg"
+                    alt="Mini handball en action"
                     className="w-full h-40 object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-orange-600/30 to-transparent"></div>
@@ -178,9 +178,9 @@ const Home = () => {
                   Débutants ou confirmés s'y entraînent sans pression, dans un climat de respect et de convivialité.
                 </p>
                 <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-amber-200 group-hover:border-amber-400 transition-colors">
-                  <img 
-                    src="/lovable-uploads/faeb26b4-5b82-49e1-8fb0-69a10700de49.png" 
-                    alt="U16 conviviale" 
+                  <img
+                    src="/WhatsApp_Image_2026-04-27_at_10.58.05b.jpeg"
+                    alt="U16 conviviale"
                     className="w-full h-40 object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-amber-600/30 to-transparent"></div>
@@ -207,9 +207,9 @@ const Home = () => {
                   équipé d'une cafétéria conviviale avec wifi pour les parents.
                 </p>
                 <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-blue-200 group-hover:border-blue-400 transition-colors">
-                  <img 
-                    src="/lovable-uploads/2c5565cf-f45d-4d43-b901-68086906cbad.png" 
-                    alt="U18 unie" 
+                  <img
+                    src="/WhatsApp_Image_2026-05-09_at_22.07.47.jpeg"
+                    alt="U18 unie"
                     className="w-full h-40 object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-600/30 to-transparent"></div>
@@ -315,15 +315,19 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <div className="relative group">
-              <img src="/lovable-uploads/33033b5b-5d7a-464e-9eb2-7894f00e2b26.png" alt="Mini handball HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
+              <img src="/WhatsApp_Image_2026-04-22_at_21.43.51.jpeg" alt="Mini handball HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
               <div className="absolute inset-0 bg-green-800/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="relative group">
-              <img src="/lovable-uploads/faeb26b4-5b82-49e1-8fb0-69a10700de49.png" alt="U16 HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
+              <img src="/WhatsApp_Image_2025-11-30_at_14.59.44b.jpeg" alt="U14 HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
               <div className="absolute inset-0 bg-green-800/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="relative group">
-              <img src="/lovable-uploads/2c5565cf-f45d-4d43-b901-68086906cbad.png" alt="U18 HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
+              <img src="/WhatsApp_Image_2026-04-27_at_10.58.05b.jpeg" alt="U16 HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
+              <div className="absolute inset-0 bg-green-800/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+            <div className="relative group">
+              <img src="/WhatsApp_Image_2026-05-09_at_22.07.47.jpeg" alt="U18 HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
               <div className="absolute inset-0 bg-green-800/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="relative group">

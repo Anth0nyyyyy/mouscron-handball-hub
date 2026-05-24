@@ -192,7 +192,7 @@ const Team = () => {
               </span>
               <div className="flex flex-col items-center">
                 <img
-                  src="/lovable-uploads/33033b5b-5d7a-464e-9eb2-7894f00e2b26.png"
+                  src="/WhatsApp_Image_2026-04-22_at_21.43.51.jpeg"
                   alt="Équipe Mini handball HC Mouscron"
                   className="w-full max-w-md rounded-2xl shadow-lg border-4 border-hc-green-light animate-fade-in"
                 />
@@ -208,7 +208,7 @@ const Team = () => {
               </span>
               <div className="flex flex-col items-center">
                 <img
-                  src="/image.png"
+                  src="/WhatsApp_Image_2025-11-30_at_14.59.44b.jpeg"
                   alt="Équipe U14 HC Mouscron"
                   className="w-full max-w-md rounded-2xl shadow-lg border-4 border-hc-green-light animate-fade-in"
                 />
@@ -225,7 +225,7 @@ const Team = () => {
               </span>
               <div className="flex flex-col items-center">
                 <img
-                  src="/lovable-uploads/faeb26b4-5b82-49e1-8fb0-69a10700de49.png"
+                  src="/WhatsApp_Image_2026-04-27_at_10.58.05b.jpeg"
                   alt="Équipe U16 HC Mouscron"
                   className="w-full max-w-md rounded-2xl shadow-lg border-4 border-hc-green animate-fade-in"
                 />
@@ -241,7 +241,7 @@ const Team = () => {
               </span>
               <div className="flex flex-col items-center">
                 <img
-                  src="/lovable-uploads/2c5565cf-f45d-4d43-b901-68086906cbad.png"
+                  src="/WhatsApp_Image_2026-05-09_at_22.07.47.jpeg"
                   alt="Équipe U18 HC Mouscron"
                   className="w-full max-w-md rounded-2xl shadow-lg border-4 border-hc-green-light animate-fade-in"
                 />
