@@ -122,7 +122,7 @@ const Home = () => {
                 </p>
                 <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-orange-200 group-hover:border-orange-400 transition-colors">
                   <img
-                    src="/lovable-uploads/33033b5b-5d7a-464e-9eb2-7894f00e2b26.png"
+                    src="/lovable-uploads/WhatsApp_Image_2026-05-09_at_22.07.47 copy.jpeg"
                     alt="Mini handball en action"
                     className="w-full h-40 object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
@@ -151,7 +151,7 @@ const Home = () => {
                 </p>
                 <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-green-200 group-hover:border-green-400 transition-colors">
                   <img
-                    src="/lovable-uploads/a4551830-cf39-4d58-bf31-7325e3117da5.png"
+                    src="/lovable-uploads/WhatsApp_Image_2025-10-01_at_06.45.20 copy.jpeg"
                     alt="Équipe seniors unie"
                     className="w-full h-40 object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
@@ -179,7 +179,7 @@ const Home = () => {
                 </p>
                 <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-amber-200 group-hover:border-amber-400 transition-colors">
                   <img
-                    src="/lovable-uploads/faeb26b4-5b82-49e1-8fb0-69a10700de49.png"
+                    src="/lovable-uploads/WhatsApp_Image_2025-11-30_at_14.59.44b copy.jpeg"
                     alt="U16 conviviale"
                     className="w-full h-40 object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
@@ -208,7 +208,7 @@ const Home = () => {
                 </p>
                 <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-blue-200 group-hover:border-blue-400 transition-colors">
                   <img
-                    src="/lovable-uploads/2c5565cf-f45d-4d43-b901-68086906cbad.png"
+                    src="/lovable-uploads/WhatsApp_Image_2026-04-22_at_21.43.51 copy.jpeg"
                     alt="U18 unie"
                     className="w-full h-40 object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
@@ -315,23 +315,23 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <div className="relative group">
-              <img src="/lovable-uploads/33033b5b-5d7a-464e-9eb2-7894f00e2b26.png" alt="Mini handball HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
+              <img src="/lovable-uploads/WhatsApp_Image_2026-05-09_at_22.07.47 copy.jpeg" alt="Mini handball HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
               <div className="absolute inset-0 bg-green-800/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="relative group">
-              <img src="/lovable-uploads/1ea96fdc-8535-4f8b-a3f9-b4f3755f6633.png" alt="U14 HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
+              <img src="/lovable-uploads/WhatsApp_Image_2026-04-27_at_10.58.05b copy.jpeg" alt="U14 HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
               <div className="absolute inset-0 bg-green-800/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="relative group">
-              <img src="/lovable-uploads/faeb26b4-5b82-49e1-8fb0-69a10700de49.png" alt="U16 HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
+              <img src="/lovable-uploads/WhatsApp_Image_2025-11-30_at_14.59.44b copy.jpeg" alt="U16 HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
               <div className="absolute inset-0 bg-green-800/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="relative group">
-              <img src="/lovable-uploads/2c5565cf-f45d-4d43-b901-68086906cbad.png" alt="U18 HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
+              <img src="/lovable-uploads/WhatsApp_Image_2026-04-22_at_21.43.51 copy.jpeg" alt="U18 HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
               <div className="absolute inset-0 bg-green-800/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="relative group">
-              <img src="/lovable-uploads/a4551830-cf39-4d58-bf31-7325e3117da5.png" alt="Seniors HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
+              <img src="/lovable-uploads/WhatsApp_Image_2025-10-01_at_06.45.20 copy.jpeg" alt="Seniors HC Mouscron" className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow" />
               <div className="absolute inset-0 bg-green-800/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="relative group">
