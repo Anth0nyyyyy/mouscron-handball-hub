@@ -97,7 +97,7 @@ const Home = () => {
 
               <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 mx-auto max-w-4xl border-2 border-white/20 shadow-2xl">
                 <p className="text-2xl sm:text-3xl text-yellow-100 font-bold drop-shadow-lg leading-relaxed">
-                  🏐 Plus qu'un sport, une passion partagée !
+                   Plus qu'un sport, une passion partagée !
                 </p>
                 <p className="text-lg text-white/90 mt-4 drop-shadow-md">
                   Découvrez pourquoi le handball au HC Mouscron est une expérience unique

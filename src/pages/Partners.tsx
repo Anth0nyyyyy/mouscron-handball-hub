@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const Partners = () => {
+  // LISTE DES 4 PARTENAIRES ACTUELS
   const partners = [
     {
       name: 'Crack',
@@ -19,12 +20,6 @@ const Partners = () => {
       description: 'Solutions électriques professionnelles'
     },
     {
-      name: 'Hollebeke',
-      logo: '/lovable-uploads/3e0d607f-5f42-442c-927b-96d9671ee3cf.png',
-      website: 'https://pneus-hollebeke.be/index.html',
-      description: 'Pneus Hollebeke - Votre spécialiste pneumatiques'
-    },
-    {
       name: 'Acta Security',
       logo: '/lovable-uploads/919c9f3d-5770-47d1-8dcf-445e17bb9d18.png',
       website: 'https://www.acta-security.be/',
@@ -32,7 +27,7 @@ const Partners = () => {
     },
     {
       name: 'Banque CPH',
-      logo: '/lovable-uploads/cph-banque.png', // Logo extrait du PDF
+      logo: '/lovable-uploads/cph-banque.png',
       website: 'https://www.cph.be/',
       description: 'Banque & Assurances - Partenaire financier de proximité'
     }
@@ -66,12 +61,12 @@ const Partners = () => {
           </div>
         </section>
 
-        {/* Partners Grid (Adaptée pour afficher élégamment les 5 partenaires) */}
+        {/* Partners Grid (4 Colonnes complètes pour remplir tout l'espace proprement) */}
         <section className="py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <Card className="shadow-2xl border-0 overflow-hidden bg-white/80 backdrop-blur-sm mb-12">
               <CardContent className="p-0">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8">
                   {partners.map((partner, index) => (
                       <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-2 hover:border-hc-green flex flex-col justify-between">
                         <CardContent className="p-6 text-center flex flex-col justify-between h-full">
