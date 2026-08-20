@@ -19,7 +19,7 @@ const StaffContacts = () => (
                 href="mailto:handballmouscron@gmail.com"
                 className="hover:text-hc-orange transition-colors cursor-pointer"
               >
-                handballmouscron@gmail.com
+                secretariat.handballmouscron@gmail.com
               </a>
             </p>
           </div>

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Definition of the design system. Charte Graphique Officielle HC Mouscron */
 
 @layer base {
   :root {
@@ -15,16 +15,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 150 100% 35%;
+    /* Couleurs principales Shadcn alignées avec la charte */
+    --primary: 151 46% 21%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 25 95% 53%;
+    --secondary: 30 71% 48%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 25 95% 53%;
+    --accent: 30 71% 48%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 150 100% 35%;
+    --ring: 151 46% 21%;
 
     --radius: 0.5rem;
 
@@ -45,11 +46,11 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Custom colors for HC Mouscron - More vibrant */
-    --hc-green: 150 100% 30%;
-    --hc-orange: 25 100% 50%;
-    --hc-green-light: 150 70% 40%;
-    --hc-orange-light: 25 85% 60%;
+    /* Couleurs officielles de la charte graphique HC Mouscron */
+    --hc-green: 151 46% 21%;       /* #1D4E34 (Vert Officiel) */
+    --hc-orange: 30 71% 48%;       /* #D27C24 (Orange Officiel) */
+    --hc-green-light: 145 45% 29%; /* #286B43 (Vert Secondaire) */
+    --hc-orange-light: 30 77% 55%;/* #E58C33 (Orange Secondaire) */
   }
 
   .dark {
@@ -57,21 +58,19 @@
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 150 100% 45%;
+    --primary: 151 46% 25%;
     --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 25 95% 63%;
+    --secondary: 30 71% 55%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 25 95% 63%;
+    --accent: 30 71% 55%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 150 100% 45%;
+    --ring: 151 46% 25%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -88,8 +87,16 @@
     @apply border-border;
   }
 
+  /* Police officielle Montserrat appliquée sur tout le corps du site */
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* POLICE OFFICIELLE BEBAS NEUE AUTOMATIQUE SUR TOUS LES TITRES DU SITE */
+  h1,h2{
+    font-family: 'Bebas Neue', cursive, sans-serif;
+    letter-spacing: 0.04em; /* Espacement léger pour sublimer le style Bebas */
   }
 }
 
@@ -97,61 +104,66 @@
   .text-hc-green {
     color: hsl(var(--hc-green));
   }
-  
+
   .text-hc-orange {
     color: hsl(var(--hc-orange));
   }
-  
+
   .bg-hc-green {
     background-color: hsl(var(--hc-green));
   }
-  
+
   .bg-hc-orange {
     background-color: hsl(var(--hc-orange));
   }
-  
+
   .bg-hc-green-light {
     background-color: hsl(var(--hc-green-light));
   }
-  
+
   .bg-hc-orange-light {
     background-color: hsl(var(--hc-orange-light));
   }
-  
+
   .border-hc-green {
     border-color: hsl(var(--hc-green));
   }
-  
+
   .border-hc-orange {
     border-color: hsl(var(--hc-orange));
   }
 
-  /* Text shadow utilities for better visibility */
+  /* Utilitaire pour forcer Bebas Neue manuellement si besoin */
+  .font-bebas {
+    font-family: 'Bebas Neue', cursive, sans-serif;
+  }
+
+  /* Text shadow utilities */
   .text-shadow-sm {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   }
-  
+
   .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
-  
+
   .text-shadow-lg {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
   }
 
-  /* Animations personnalisées */
+  /* Animations */
   .animate-spin-slow {
     animation: spin 8s linear infinite;
   }
-  
+
   .animate-spin-reverse {
     animation: spin 6s linear infinite reverse;
   }
-  
+
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
-  
+
   .animate-glow {
     animation: glow 2s ease-in-out infinite alternate;
   }
@@ -168,9 +180,9 @@
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+    box-shadow: 0 0 20px rgba(29, 78, 52, 0.5);
   }
   to {
-    box-shadow: 0 0 30px rgba(251, 191, 36, 0.8);
+    box-shadow: 0 0 30px rgba(210, 124, 36, 0.8);
   }
 }
