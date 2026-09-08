@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const Partners = () => {
-  // LISTE DES 4 PARTENAIRES ACTUELS
+  // LISTE COMPLETE DES PARTENAIRES OFFICIELS
   const partners = [
     {
       name: 'Crack',
@@ -30,6 +30,24 @@ const Partners = () => {
       logo: '/lovable-uploads/cph-banque.png',
       website: 'https://www.cph.be/',
       description: 'Banque & Assurances - Partenaire financier de proximité'
+    },
+    {
+      name: 'Paramed Center Coquinie',
+      logo: '/lovable-uploads/paramed-center-coquinie.jpg', // Image du logo téléversée
+      website: 'https://www.facebook.com/ParamedCenterCoquinie',
+      description: 'Centre paramédical à Mouscron (Kiné, Diététique, Logopédie)'
+    },
+    {
+      name: 'Hoption',
+      logo: '/lovable-uploads/hoption.jpg',
+      website: 'https://hoptionmouscron.be/',
+      description: 'Brasserie artisanale mouscronnoise - Bières uniques & authentiques.'
+    },
+    {
+      name: 'GM Group',
+      logo: '/lovable-uploads/gm-group.png',
+      website: 'https://gm-groupe.be/',
+      description: 'Assurances (DVV), Crédits & Immobilier à Mouscron'
     }
   ];
 
@@ -61,25 +79,32 @@ const Partners = () => {
           </div>
         </section>
 
-        {/* Partners Grid (4 Colonnes complètes pour remplir tout l'espace proprement) */}
+        {/* Partners Grid avec Logos Cliquables */}
         <section className="py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <Card className="shadow-2xl border-0 overflow-hidden bg-white/80 backdrop-blur-sm mb-12">
               <CardContent className="p-0">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8">
                   {partners.map((partner, index) => (
                       <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-2 hover:border-hc-green flex flex-col justify-between">
                         <CardContent className="p-6 text-center flex flex-col justify-between h-full">
                           <div>
+                            {/* LOGO CLIQUABLE (Redirige directement vers le site/Facebook du partenaire) */}
                             <div className="mb-6 flex justify-center">
-                              <div className="w-full h-36 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200 group-hover:border-hc-green transition-colors p-3">
+                              <a
+                                  href={partner.website}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  title={`Visiter ${partner.name}`}
+                                  className="w-full h-36 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200 group-hover:border-hc-green transition-colors p-3 hover:scale-105 transform transition-transform"
+                              >
                                 <img
                                     src={partner.logo}
                                     alt={`${partner.name} logo`}
                                     loading="lazy"
                                     className="max-w-full max-h-full object-contain"
                                 />
-                              </div>
+                              </a>
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-2">
                               {partner.name}
@@ -88,6 +113,8 @@ const Partners = () => {
                               {partner.description}
                             </p>
                           </div>
+
+                          {/* BOUTON DE LIEN */}
                           <Button asChild className="bg-hc-green hover:bg-hc-orange text-white w-full group-hover:scale-105 transition-transform font-semibold mt-auto">
                             <a href={partner.website} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                               Visiter le site
