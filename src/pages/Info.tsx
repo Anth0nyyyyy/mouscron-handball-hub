@@ -8,52 +8,42 @@ import { Badge } from '@/components/ui/badge';
 const trainingSchedule = [
   {
     category: "Mini-handball (né(e)s en 2015+)",
-    day: "Tous les samedis (Dès le 05/09)",
+    day: "Tous les samedis",
     time: "10:30 - 12:00"
   },
   {
     category: "U16 (né(e)s en 2011 et 2012)",
-    day: "Tous les lundis (Dès le 17/08)",
+    day: "Tous les lundis",
     time: "17:30 - 18:45"
   },
   {
     category: "U16 (né(e)s en 2011 et 2012)",
-    day: "Tous les vendredis (Dès le 17/08)",
+    day: "Tous les vendredis",
     time: "17:30 - 19:00"
   },
   {
     category: "U18 (né(e)s en 2008 à 2010)",
-    day: "Tous les lundis (Dès le 17/08)",
+    day: "Tous les lundis",
     time: "18:30 - 20:00"
   },
   {
     category: "U18 (né(e)s en 2008 à 2010)",
-    day: "Tous les vendredis (Dès le 17/08)",
+    day: "Tous les vendredis",
     time: "17:30 - 19:00"
   },
   {
-    category: "Seniors (Début Août)",
-    day: "Mercredis 5 et 12 Août",
-    time: "18:30 - 20:00"
-  },
-  {
-    category: "Seniors (Début Août)",
-    day: "Vendredis 7 et 14 Août",
-    time: "18:30 - 20:00"
-  },
-  {
-    category: "Seniors (Rentrée dès le 19/08)",
+    category: "Seniors",
     day: "Tous les mercredis",
     time: "19:30 - 21:00"
   },
   {
-    category: "Seniors (Rentrée dès le 19/08)",
+    category: "Seniors",
     day: "Tous les vendredis",
     time: "19:00 - 20:30"
   },
   {
     category: "Équipe Loisir",
-    day: "Tous les vendredis (Dès le 21/08)",
+    day: "Tous les vendredis",
     time: "20:30 - 21:45"
   }
 ];

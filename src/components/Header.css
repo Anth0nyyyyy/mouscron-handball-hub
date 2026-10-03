@@ -1,0 +1,41 @@
+/* Header.css — styles de Header.tsx
+   Les couleurs viennent de index.css (--hc-green, --hc-orange, ...).
+   Les polices viennent aussi de index.css : Bebas Neue (titres) et Montserrat (texte). */
+.hc-h{font-synthesis:none}
+.hc-h{position:sticky;top:0;z-index:50;padding:10px clamp(10px,2vw,28px);pointer-events:none;font-family:'Bebas Neue','Oswald',Impact,sans-serif}
+.hc-h *{box-sizing:border-box}
+.hc-bar{position:relative;z-index:1;pointer-events:auto;max-width:1280px;margin:0 auto;height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px 8px 8px;border-radius:999px;color:#fff;
+    background:var(--gradient-brand);border:1px solid rgba(255,255,255,.22);
+    box-shadow:0 16px 36px -18px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.18);transition:height .3s,box-shadow .3s}
+.hc-h.sc .hc-bar{height:58px;box-shadow:0 22px 44px -16px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.18)}
+.hc-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;flex:none}
+.hc-brand img{width:54px;height:54px;border-radius:50%;background:#fff;padding:3px;object-fit:contain;box-shadow:0 6px 16px -6px rgba(0,0,0,.5);transition:width .3s,height .3s,transform .3s}
+.hc-h.sc .hc-brand img{width:44px;height:44px}
+.hc-brand:hover img{transform:rotate(-8deg) scale(1.06)}
+.hc-brand span{font-size:20px;font-weight:800;line-height:.9;letter-spacing:.06em;text-transform:uppercase}
+.hc-links{display:none;align-items:center;gap:4px;padding:5px;border-radius:999px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.14)}
+.hc-links a{position:relative;padding:9px 20px;border-radius:999px;color:#fff;text-decoration:none;font-size:19px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:background .25s,color .25s}
+.hc-links a:hover{background:rgba(255,255,255,.14)}
+.hc-links a.on{background:#fff;color:hsl(var(--hc-green));box-shadow:0 8px 18px -8px rgba(0,0,0,.5)}
+.hc-right{display:flex;align-items:center;gap:8px}
+.hc-soc{display:flex;align-items:center;gap:6px}
+.hc-soc a{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;color:#fff;background:rgba(255,255,255,.12);transition:background .25s,transform .25s}
+.hc-soc a:hover{background:rgba(255,255,255,.28);transform:translateY(-2px) scale(1.08)}
+.hc-soc img{width:22px;height:22px}.hc-soc svg{width:19px;height:19px}
+.hc-right .hc-soc{display:none}
+.hc-burger{width:46px;height:46px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.14);color:#fff;cursor:pointer;transition:background .25s,transform .25s}
+.hc-burger:hover{background:rgba(255,255,255,.26)}
+.hc-bar button:focus-visible,.hc-bar a:focus-visible,.hc-sheet a:focus-visible{outline:2px solid hsl(38 100% 90%);outline-offset:3px}
+@media(min-width:1024px){.hc-links{display:flex}.hc-right .hc-soc{display:flex}.hc-burger{display:none}.hc-bar{padding:8px 14px 8px 8px}.hc-sheet{display:none!important}}
+/* menu mobile */
+.hc-sheet{position:fixed;inset:0;z-index:0;pointer-events:auto;display:flex;flex-direction:column;justify-content:space-between;padding:108px 26px max(30px,env(safe-area-inset-bottom));overflow-y:auto;
+    background:linear-gradient(160deg,hsl(var(--hc-green)),hsl(var(--hc-green-light)) 55%,hsl(var(--hc-orange)));visibility:hidden;clip-path:circle(0 at calc(100% - 46px) 46px);transition:clip-path .6s cubic-bezier(.7,0,.2,1),visibility 0s .6s}
+.hc-h.open .hc-sheet{visibility:visible;clip-path:circle(160% at calc(100% - 46px) 46px);transition:clip-path .6s cubic-bezier(.7,0,.2,1),visibility 0s}
+.hc-sheet nav{display:flex;flex-direction:column;gap:2px}
+.hc-sheet nav a{display:flex;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font-size:clamp(42px,12vw,64px);font-weight:800;line-height:1;text-transform:uppercase;letter-spacing:.02em;opacity:0;transform:translateY(24px);transition:opacity .4s,transform .5s cubic-bezier(.16,1,.3,1),color .2s}
+.hc-sheet nav a small{font-size:14px;font-weight:700;letter-spacing:.2em;color:hsl(38 100% 90%)}
+.hc-sheet nav a.on{color:hsl(38 100% 90%)}
+.hc-h.open .hc-sheet nav a{opacity:1;transform:none;transition-delay:calc(.12s + var(--i)*.06s)}
+.hc-sheet .hc-soc{margin-top:28px}.hc-sheet .hc-soc a{width:48px;height:48px;background:rgba(255,255,255,.16)}
+@media(max-width:380px){.hc-brand span{display:none}}
+@media(prefers-reduced-motion:reduce){.hc-h *{transition:none!important}}

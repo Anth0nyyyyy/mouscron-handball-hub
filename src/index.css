@@ -1,84 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. Charte Graphique Officielle HC Mouscron */
+/* ==========================================================================
+   DESIGN SYSTEM — Charte graphique HC Mouscron (v2)
+   Couleurs relevées sur la flyer « Formule Découverte » :
+     Vert profond  #03301A   (fonds, titres, boutons)
+     Vert forêt    #0B472A   (dégradés, survols)
+     Orange vif    #E25E02   (accents, appels à l'action)
+     Orange clair  #FF7418   (survols, lueurs)
+     Papier        #F8F8F8   (zones claires de la flyer)
+   ========================================================================== */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* --- Palette de marque (HSL) --- */
+    --hc-green: 151 88% 10%;          /* #03301A  Vert profond */
+    --hc-green-light: 151 74% 16%;    /* #0B472A  Vert forêt */
+    --hc-green-soft: 148 38% 92%;     /* #E4F1E9  Vert très pâle (cartes, badges) */
+    --hc-orange: 25 98% 45%;          /* #E25E02  Orange vif */
+    --hc-orange-light: 26 100% 55%;   /* #FF7418  Orange clair */
+    --hc-orange-soft: 28 100% 94%;    /* #FFEFE0  Orange très pâle */
+    --hc-paper: 0 0% 97%;             /* #F8F8F8  Papier */
+
+    /* --- Dégradés & ombres de marque --- */
+    --gradient-brand: linear-gradient(100deg, hsl(var(--hc-green)) 0%, hsl(var(--hc-green-light)) 55%, hsl(var(--hc-orange)) 100%);
+    --gradient-warm: linear-gradient(100deg, hsl(var(--hc-orange)) 0%, hsl(var(--hc-orange-light)) 50%, hsl(var(--hc-green)) 100%);
+    --gradient-night: linear-gradient(160deg, hsl(var(--hc-green-light)), hsl(var(--hc-green)) 70%);
+    --shadow-green: 0 20px 44px -20px hsl(var(--hc-green) / 0.55);
+    --shadow-orange: 0 18px 40px -16px hsl(var(--hc-orange) / 0.7);
+
+    /* --- Tokens shadcn/ui (mode clair) --- */
+    --background: 140 22% 98%;
+    --foreground: 151 70% 6%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 151 70% 6%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 151 70% 6%;
 
-    /* Couleurs principales Shadcn alignées avec la charte */
-    --primary: 151 46% 21%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 151 88% 10%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 71% 48%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 25 98% 45%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 142 20% 94%;
+    --muted-foreground: 150 14% 36%;
 
-    --accent: 30 71% 48%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 28 100% 94%;
+    --accent-foreground: 25 98% 32%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 78% 52%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 151 46% 21%;
+    --border: 145 16% 88%;
+    --input: 145 16% 88%;
+    --ring: 25 98% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* Couleurs officielles de la charte graphique HC Mouscron */
-    --hc-green: 151 46% 21%;       /* #1D4E34 (Vert Officiel) */
-    --hc-orange: 30 71% 48%;       /* #D27C24 (Orange Officiel) */
-    --hc-green-light: 145 45% 29%; /* #286B43 (Vert Secondaire) */
-    --hc-orange-light: 30 77% 55%;/* #E58C33 (Orange Secondaire) */
+    --sidebar-background: 140 22% 97%;
+    --sidebar-foreground: 151 40% 20%;
+    --sidebar-primary: 151 88% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 148 38% 92%;
+    --sidebar-accent-foreground: 151 88% 10%;
+    --sidebar-border: 145 16% 88%;
+    --sidebar-ring: 25 98% 45%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --primary: 151 46% 25%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 30 71% 55%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 30 71% 55%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 151 46% 25%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --hc-green-soft: 151 45% 14%;
+    --hc-orange-soft: 25 70% 16%;
+    --hc-paper: 151 40% 10%;
+    --shadow-green: 0 24px 50px -22px rgb(0 0 0 / 0.8);
+
+    --background: 151 80% 4%;          /* #021A0E */
+    --foreground: 140 30% 96%;
+
+    --card: 151 70% 6%;
+    --card-foreground: 140 30% 96%;
+
+    --popover: 151 70% 6%;
+    --popover-foreground: 140 30% 96%;
+
+    --primary: 25 98% 50%;
+    --primary-foreground: 151 88% 6%;
+
+    --secondary: 151 55% 20%;
+    --secondary-foreground: 140 30% 96%;
+
+    --muted: 151 45% 12%;
+    --muted-foreground: 145 16% 70%;
+
+    --accent: 151 55% 16%;
+    --accent-foreground: 26 100% 62%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 151 40% 15%;
+    --input: 151 40% 15%;
+    --ring: 26 100% 55%;
+
+    --sidebar-background: 151 80% 5%;
+    --sidebar-foreground: 140 30% 92%;
+    --sidebar-primary: 25 98% 50%;
+    --sidebar-primary-foreground: 151 88% 6%;
+    --sidebar-accent: 151 45% 12%;
+    --sidebar-accent-foreground: 140 30% 96%;
+    --sidebar-border: 151 40% 15%;
+    --sidebar-ring: 26 100% 55%;
   }
 }
 
@@ -87,102 +123,235 @@
     @apply border-border;
   }
 
-  /* Police officielle Montserrat appliquée sur tout le corps du site */
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Montserrat', sans-serif;
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
-  /* POLICE OFFICIELLE BEBAS NEUE AUTOMATIQUE SUR TOUS LES TITRES DU SITE */
-  h1,h2{
-    font-family: 'Bebas Neue', cursive, sans-serif;
-    letter-spacing: 0.04em; /* Espacement léger pour sublimer le style Bebas */
+  /* Police officielle Montserrat sur tout le site */
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Police officielle Bebas Neue sur les grands titres */
+  h1,
+  h2 {
+    font-family: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+    letter-spacing: 0.04em;
+    line-height: 1.02;
+  }
+
+  h3,
+  h4 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: hsl(var(--hc-orange));
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--hc-orange-light));
+    outline-offset: 3px;
+  }
+
+  /* Barre de défilement aux couleurs du club */
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--hc-green));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--hc-orange)), hsl(var(--hc-orange-light)));
+    border-radius: 999px;
+    border: 2px solid hsl(var(--hc-green));
+  }
+  html {
+    scrollbar-color: hsl(var(--hc-orange)) hsl(var(--hc-green));
+  }
+}
+
+@layer components {
+  /* Titre « flyer » : Bebas italique avec guillemets orange */
+  .title-flyer {
+    font-family: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  /* Surtitre encadré de traits : — FORMULE — */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: hsl(var(--hc-orange));
+  }
+  .eyebrow::before,
+  .eyebrow::after {
+    content: '';
+    width: 2.5rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.7;
+  }
+
+  /* Boutons de marque */
+  .btn-hc {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    color: #fff;
+    background: hsl(var(--hc-green));
+    box-shadow: var(--shadow-green);
+    transition: transform 0.25s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-hc:hover {
+    background: hsl(var(--hc-orange));
+    box-shadow: var(--shadow-orange);
+    transform: translateY(-2px);
+  }
+  .btn-hc-orange {
+    background: linear-gradient(100deg, hsl(var(--hc-orange)), hsl(var(--hc-orange-light)));
+    box-shadow: var(--shadow-orange);
+  }
+  .btn-hc-orange:hover {
+    background: linear-gradient(100deg, hsl(var(--hc-orange-light)), hsl(var(--hc-orange)));
+  }
+
+  /* Carte « papier » à bordure verte */
+  .card-hc {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow-green);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease, box-shadow 0.35s ease;
+  }
+  .card-hc:hover {
+    transform: translateY(-6px);
+    border-color: hsl(var(--hc-orange));
+    box-shadow: 0 28px 56px -26px hsl(var(--hc-orange) / 0.65);
+  }
+
+  /* Encadré clair à coche, comme « Sans exclusivité sectorielle » */
+  .callout-hc {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    background: hsl(var(--hc-green-soft));
+    border: 1px solid hsl(var(--hc-green) / 0.18);
+    color: hsl(var(--hc-green));
   }
 }
 
 @layer utilities {
-  .text-hc-green {
-    color: hsl(var(--hc-green));
+  /* --- Couleurs de marque --- */
+  .text-hc-green { color: hsl(var(--hc-green)); }
+  .text-hc-green-light { color: hsl(var(--hc-green-light)); }
+  .text-hc-orange { color: hsl(var(--hc-orange)); }
+  .text-hc-orange-light { color: hsl(var(--hc-orange-light)); }
+
+  .bg-hc-green { background-color: hsl(var(--hc-green)); }
+  .bg-hc-green-light { background-color: hsl(var(--hc-green-light)); }
+  .bg-hc-green-soft { background-color: hsl(var(--hc-green-soft)); }
+  .bg-hc-orange { background-color: hsl(var(--hc-orange)); }
+  .bg-hc-orange-light { background-color: hsl(var(--hc-orange-light)); }
+  .bg-hc-orange-soft { background-color: hsl(var(--hc-orange-soft)); }
+  .bg-hc-paper { background-color: hsl(var(--hc-paper)); }
+
+  .border-hc-green { border-color: hsl(var(--hc-green)); }
+  .border-hc-orange { border-color: hsl(var(--hc-orange)); }
+
+  .hover\:bg-hc-orange:hover { background-color: hsl(var(--hc-orange)); }
+  .hover\:bg-hc-green:hover { background-color: hsl(var(--hc-green)); }
+  .hover\:text-hc-orange:hover { color: hsl(var(--hc-orange)); }
+
+  /* --- Dégradés de marque --- */
+  .bg-hc-gradient { background-image: var(--gradient-brand); }
+  .bg-hc-gradient-warm { background-image: var(--gradient-warm); }
+  .bg-hc-night { background-image: var(--gradient-night); }
+  .text-hc-gradient {
+    background-image: linear-gradient(100deg, hsl(var(--hc-orange-light)), hsl(var(--hc-orange)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
-  .text-hc-orange {
-    color: hsl(var(--hc-orange));
-  }
+  /* --- Formes de la flyer : bords en biais --- */
+  .clip-slash { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+  .clip-slash-reverse { clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%); }
+  .clip-slash-both { clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%); }
 
-  .bg-hc-green {
-    background-color: hsl(var(--hc-green));
-  }
+  /* Utilitaire pour forcer Bebas Neue manuellement */
+  .font-bebas { font-family: 'Bebas Neue', 'Oswald', Impact, sans-serif; }
 
-  .bg-hc-orange {
-    background-color: hsl(var(--hc-orange));
-  }
+  /* --- Ombres de texte --- */
+  .text-shadow-sm { text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
+  .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+  .text-shadow-lg { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); }
 
-  .bg-hc-green-light {
-    background-color: hsl(var(--hc-green-light));
-  }
-
-  .bg-hc-orange-light {
-    background-color: hsl(var(--hc-orange-light));
-  }
-
-  .border-hc-green {
-    border-color: hsl(var(--hc-green));
-  }
-
-  .border-hc-orange {
-    border-color: hsl(var(--hc-orange));
-  }
-
-  /* Utilitaire pour forcer Bebas Neue manuellement si besoin */
-  .font-bebas {
-    font-family: 'Bebas Neue', cursive, sans-serif;
-  }
-
-  /* Text shadow utilities */
-  .text-shadow-sm {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  }
-
-  .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  .text-shadow-lg {
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-  }
-
-  /* Animations */
-  .animate-spin-slow {
-    animation: spin 8s linear infinite;
-  }
-
-  .animate-spin-reverse {
-    animation: spin 6s linear infinite reverse;
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+  /* --- Animations --- */
+  .animate-spin-slow { animation: spin 8s linear infinite; }
+  .animate-spin-reverse { animation: spin 6s linear infinite reverse; }
+  .animate-float { animation: float 3s ease-in-out infinite; }
+  .animate-glow { animation: glow 2s ease-in-out infinite alternate; }
+  .animate-marquee { animation: marquee 40s linear infinite; }
+  .animate-fade-up { animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .animate-shimmer {
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
   }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes glow {
-  from {
-    box-shadow: 0 0 20px rgba(29, 78, 52, 0.5);
-  }
-  to {
-    box-shadow: 0 0 30px rgba(210, 124, 36, 0.8);
+  from { box-shadow: 0 0 20px hsl(var(--hc-green) / 0.5); }
+  to { box-shadow: 0 0 34px hsl(var(--hc-orange) / 0.85); }
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

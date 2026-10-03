@@ -1,0 +1,28 @@
+/* PartnersCarousel.css — bandeau de logos qui défile (2 lignes en sens opposés)
+   Hérite des variables du thème de la page (--surface, --line, --mute...) avec des valeurs de secours. */
+.pc{font-synthesis:none;color:var(--ink,hsl(151 70% 7%))}
+.pc-wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.pc-head{text-align:center;margin-bottom:clamp(22px,4vw,36px)}
+.pc-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--accent,hsl(25 98% 36%))}
+.pc-eyebrow::before,.pc-eyebrow::after{content:'';width:34px;height:1px;background:currentColor;opacity:.7}
+.pc h2{margin:12px 0 0;font:400 clamp(38px,6.4vw,70px)/.95 'Bebas Neue','Oswald',Impact,sans-serif;letter-spacing:.03em;text-transform:uppercase}
+.pc h2 em{font-style:normal;background:linear-gradient(100deg,hsl(var(--hc-orange-light)),hsl(var(--hc-orange)));-webkit-background-clip:text;background-clip:text;color:transparent}
+.pc-panel{position:relative;display:block;padding:clamp(20px,3vw,32px) 0 clamp(22px,3vw,30px);border-radius:30px;overflow:hidden;text-decoration:none;color:inherit;background:var(--surface,#fff);border:1px solid var(--line,hsl(151 60% 10% / .12));box-shadow:var(--shadow,0 26px 50px -24px hsl(151 60% 10% / .32));transition:border-color .3s,box-shadow .4s,background-color .35s}
+.pc-panel::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px circle at 50% 0%,hsl(var(--hc-orange) / .12),transparent 70%)}
+.pc-panel:hover{border-color:hsl(var(--hc-orange));box-shadow:0 34px 64px -28px hsl(var(--hc-orange) / .55)}
+.pc-panel:focus-visible{outline:2px solid hsl(var(--hc-orange-light));outline-offset:4px}
+.pc-row{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.pc-row+.pc-row{margin-top:14px}
+.pc-track{display:flex;width:max-content;animation:pcscroll 46s linear infinite}
+.pc-row.rev .pc-track{animation-direction:reverse;animation-duration:58s}
+.pc-panel:hover .pc-track{animation-play-state:paused}
+.pc-set{display:flex;gap:14px;padding-right:14px}
+@keyframes pcscroll{to{transform:translateX(-50%)}}
+.pc-tile{flex:none;width:clamp(138px,17vw,188px);height:clamp(84px,10vw,112px);display:grid;place-items:center;padding:14px;border-radius:18px;background:#fff;border:1px solid hsl(151 60% 10% / .1);box-shadow:0 12px 26px -16px rgba(0,0,0,.45);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.pc-tile img{max-width:100%;max-height:100%;object-fit:contain}
+.pc-tile b{font:400 44px/1 'Bebas Neue',Impact,sans-serif;color:hsl(var(--hc-green))}
+@media(hover:hover){.pc-tile:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 22px 36px -16px hsl(var(--hc-orange) / .6)}}
+.pc-cta{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:max-content;max-width:calc(100% - 32px);margin:clamp(20px,3vw,28px) auto 0;padding:13px 26px;border-radius:999px;color:#fff;background:linear-gradient(100deg,hsl(var(--hc-orange)),hsl(var(--hc-orange-light)));font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-align:center;box-shadow:0 14px 30px -14px hsl(var(--hc-orange) / .85);transition:transform .25s}
+.pc-cta svg{transition:transform .3s}
+.pc-panel:hover .pc-cta{transform:translateY(-2px)}.pc-panel:hover .pc-cta svg{transform:translateX(5px)}
+@media(prefers-reduced-motion:reduce){.pc-track{animation:none;width:auto;flex-wrap:wrap;justify-content:center;padding:0 16px}.pc-set{flex-wrap:wrap;justify-content:center;padding:0}.pc-set.dup{display:none}.pc-row{-webkit-mask-image:none;mask-image:none}.pc *{transition:none!important}}

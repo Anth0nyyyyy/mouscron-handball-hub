@@ -1,161 +1,95 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import './Header.css';
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-
-  const leftNavigation = [
+const NAV = [
     { name: 'Accueil', href: '/' },
     { name: 'Équipe', href: '/equipe' },
-    { name: 'Partenaires', href: '/partenaires' }
-  ];
-
-  const rightNavigation = [
+    { name: 'Partenaires', href: '/partenaires' },
     { name: 'Infos', href: '/infos' },
-    { name: 'Contact', href: '/contact' }
-  ];
+    { name: 'Contact', href: '/contact' },
+];
 
-  const isActive = (href: string) => location.pathname === href;
+const TIKTOK =
+    'M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.63 4.14 1.02 1.11 2.45 1.8 3.94 2.01v4.06c-1.74-.01-3.41-.65-4.73-1.68-.31-.24-.59-.51-.85-.8-.06 2.8-.03 5.6-.04 8.41-.05 1.94-.57 3.86-1.55 5.48-1.57 2.6-4.52 4.13-7.53 3.9-2.82-.12-5.46-1.75-6.72-4.27-1.55-2.91-1.25-6.81 1.05-9.39 1.65-1.92 4.1-2.96 6.6-2.84v4.18c-1.46-.14-2.98.37-3.87 1.48-.99 1.15-1.12 2.9-.38 4.18.73 1.34 2.37 2.1 3.9 1.87 1.4-.12 2.63-1.16 2.94-2.52.12-.51.11-1.04.11-1.56V0h2.91z';
 
-  return (
-      // DÉGRADÉ FIXÉ AVEC LES CODES HEXADÉCIMAUX OFFICIELS (#1D4E34 -> #286B43 -> #D27C24)
-      <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-r from-[#1D4E34] via-[#286B43] to-[#D27C24] backdrop-blur shadow-xl h-20 lg:h-24 transition-all duration-300">
-        <nav className="mx-auto flex h-full max-w-7xl items-center justify-between p-4 lg:px-8 relative">
+const Socials = () => (
+    <div className="hc-soc">
+        <a href="https://www.facebook.com/HCMouscron" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="/lovable-uploads/b2e8bfa2-ec84-4d63-8d58-503664da7229.png" alt="" />
+        </a>
+        <a href="https://www.instagram.com/hcmouscron/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="/lovable-uploads/e132c7e8-e206-404e-b6fb-60edb8e0d181.png" alt="" />
+        </a>
+        <a href="https://www.tiktok.com/@hc.mouscron" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d={TIKTOK} /></svg>
+        </a>
+    </div>
+);
 
-          {/* 1. Navigation gauche - Desktop */}
-          <div className="hidden lg:flex lg:gap-x-6 lg:flex-1 lg:justify-end lg:pr-12 lg:items-center">
-            {leftNavigation.map(item => (
-                <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`text-white font-bold text-lg hover:text-yellow-200 transition-all drop-shadow-md px-3 py-1.5 rounded relative group ${
-                        isActive(item.href) ? 'text-yellow-200' : ''
-                    }`}
-                >
-                  {item.name}
-                  <span className={`absolute bottom-0 left-3 right-3 h-[3px] bg-yellow-200 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100 ${
-                      isActive(item.href) ? 'scale-x-100' : ''
-                  }`} />
-                </Link>
-            ))}
-          </div>
+const Header = () => {
+    const [open, setOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const { pathname } = useLocation();
+    const isActive = (href: string) => pathname === href;
 
-          {/* 2. Logo à cheval au Centre */}
-          <div className="flex-shrink-0 z-20 relative h-full flex items-center justify-center">
-            <Link to="/" className="relative top-4 sm:top-5 lg:top-5 hover:scale-105 transition-transform duration-200 block">
-              <img
-                  src="/HCM_Logo_2025_fond_transparent.png"
-                  alt="HC Mouscron logo"
-                  className="h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 rounded-full shadow-2xl bg-white p-1 border-4 border-white"
-              />
-            </Link>
-          </div>
+    useEffect(() => {
+        const on = () => setScrolled(window.scrollY > 12);
+        on();
+        window.addEventListener('scroll', on, { passive: true });
+        return () => window.removeEventListener('scroll', on);
+    }, []);
 
-          {/* 3. Navigation droite - Desktop */}
-          <div className="hidden lg:flex lg:gap-x-6 lg:flex-1 lg:justify-start lg:pl-12 lg:items-center">
-            {rightNavigation.map(item => (
-                <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`text-white font-bold text-lg hover:text-yellow-200 transition-all drop-shadow-md px-3 py-1.5 rounded relative group ${
-                        isActive(item.href) ? 'text-yellow-200' : ''
-                    }`}
-                >
-                  {item.name}
-                  <span className={`absolute bottom-0 left-3 right-3 h-[3px] bg-yellow-200 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100 ${
-                      isActive(item.href) ? 'scale-x-100' : ''
-                  }`} />
-                </Link>
-            ))}
+    useEffect(() => setOpen(false), [pathname]);
 
-            {/* Intégration de Facebook, Instagram et TikTok */}
-            <div className="flex gap-x-2 items-center ml-4 pl-4 border-l border-white/20 h-6">
-              <Button variant="ghost" size="sm" asChild className="h-9 w-9 p-0 hover:bg-white/10 rounded-full flex items-center justify-center transition-transform hover:scale-110">
-                <a
-                    href="https://www.facebook.com/HCMouscron"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white drop-shadow-md"
-                >
-                  <img src="/lovable-uploads/b2e8bfa2-ec84-4d63-8d58-503664da7229.png" alt="Facebook" className="h-6 w-6" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="sm" asChild className="h-9 w-9 p-0 hover:bg-white/10 rounded-full flex items-center justify-center transition-transform hover:scale-110">
-                <a
-                    href="https://www.instagram.com/hcmouscron/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white drop-shadow-md"
-                >
-                  <img src="/lovable-uploads/e132c7e8-e206-404e-b6fb-60edb8e0d181.png" alt="Instagram" className="h-6 w-6" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="sm" asChild className="h-9 w-9 p-0 hover:bg-white/10 rounded-full flex items-center justify-center transition-transform hover:scale-110">
-                <a
-                    href="https://www.tiktok.com/@hc.mouscron"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white drop-shadow-md flex items-center justify-center"
-                >
-                  <svg className="h-[22px] w-[22px] text-white fill-current drop-shadow-md" viewBox="0 0 24 24">
-                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.63 4.14 1.02 1.11 2.45 1.8 3.94 2.01v4.06c-1.74-.01-3.41-.65-4.73-1.68-.31-.24-.59-.51-.85-.8-.06 2.8-.03 5.6-.04 8.41-.05 1.94-.57 3.86-1.55 5.48-1.57 2.6-4.52 4.13-7.53 3.9-2.82-.12-5.46-1.75-6.72-4.27-1.55-2.91-1.25-6.81 1.05-9.39 1.65-1.92 4.1-2.96 6.6-2.84v4.18c-1.46-.14-2.98.37-3.87 1.48-.99 1.15-1.12 2.9-.38 4.18.73 1.34 2.37 2.1 3.9 1.87 1.4-.12 2.63-1.16 2.94-2.52.12-.51.11-1.04.11-1.56V0h2.91z"/>
-                  </svg>
-                </a>
-              </Button>
+    useEffect(() => {
+        document.body.style.overflow = open ? 'hidden' : '';
+        const esc = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+        window.addEventListener('keydown', esc);
+        return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', esc); };
+    }, [open]);
+
+    return (
+        <header className={`hc-h${scrolled ? ' sc' : ''}${open ? ' open' : ''}`}>
+
+            {/* Menu mobile plein écran */}
+            <div className="hc-sheet" aria-hidden={!open}>
+                <nav>
+                    {NAV.map((item, i) => (
+                        <Link key={item.name} to={item.href} tabIndex={open ? 0 : -1} className={isActive(item.href) ? 'on' : ''} style={{ '--i': i } as React.CSSProperties} onClick={() => setOpen(false)}>
+                            <small>{String(i + 1).padStart(2, '0')}</small>{item.name}
+                        </Link>
+                    ))}
+                </nav>
+                <Socials />
             </div>
-          </div>
 
-          {/* Bouton Menu Mobile */}
-          <div className="flex lg:hidden">
-            <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white hover:text-yellow-200 hover:bg-white/20"
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
-          </div>
-        </nav>
+            {/* Capsule flottante */}
+            <div className="hc-bar">
+                <Link to="/" className="hc-brand" aria-label="HC Mouscron - Accueil">
+                    <img src="/HCM_Logo_2025_fond_transparent.png" alt="HC Mouscron logo" />
+                    <span>HC<br />Mouscron</span>
+                </Link>
 
-        {/* Navigation Mobile Déroulante */}
-        {isMenuOpen && (
-            <div className="lg:hidden animate-slide-in">
-              <div className="space-y-1 px-4 pb-4 pt-2 bg-gradient-to-r from-[#1D4E34] via-[#286B43] to-[#D27C24] border-t border-white/20">
-                {[...leftNavigation, ...rightNavigation].map(item => (
-                    <Link
-                        key={item.name}
-                        to={item.href}
-                        className={`block px-3 py-2 text-base font-bold transition-colors hover:text-yellow-200 drop-shadow-md ${
-                            isActive(item.href) ? 'text-yellow-200 bg-white/10 rounded' : 'text-white'
-                        }`}
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                ))}
+                <nav className="hc-links" aria-label="Navigation principale">
+                    {NAV.map((item) => (
+                        <Link key={item.name} to={item.href} className={isActive(item.href) ? 'on' : ''} aria-current={isActive(item.href) ? 'page' : undefined}>
+                            {item.name}
+                        </Link>
+                    ))}
+                </nav>
 
-                <div className="flex gap-x-4 pt-4 px-3 border-t border-white/10 mt-2 items-center">
-                  <a href="https://www.facebook.com/HCMouscron" target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-white/10 rounded-full transition-all">
-                    <img src="/lovable-uploads/b2e8bfa2-ec84-4d63-8d58-503664da7229.png" alt="Facebook" className="h-6 w-6" />
-                  </a>
-                  <a href="https://www.instagram.com/hcmouscron/" target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-white/10 rounded-full transition-all">
-                    <img src="/lovable-uploads/e132c7e8-e206-404e-b6fb-60edb8e0d181.png" alt="Instagram" className="h-6 w-6" />
-                  </a>
-                  <a href="https://www.tiktok.com/@hc.mouscron" target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-white/10 rounded-full transition-all flex items-center justify-center">
-                    <svg className="h-6 w-6 text-white fill-current" viewBox="0 0 24 24">
-                      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.63 4.14 1.02 1.11 2.45 1.8 3.94 2.01v4.06c-1.74-.01-3.41-.65-4.73-1.68-.31-.24-.59-.51-.85-.8-.06 2.8-.03 5.6-.04 8.41-.05 1.94-.57 3.86-1.55 5.48-1.57 2.6-4.52 4.13-7.53 3.9-2.82-.12-5.46-1.75-6.72-4.27-1.55-2.91-1.25-6.81 1.05-9.39 1.65-1.92 4.1-2.96 6.6-2.84v4.18c-1.46-.14-2.98.37-3.87 1.48-.99 1.15-1.12 2.9-.38 4.18.73 1.34 2.37 2.1 3.9 1.87 1.4-.12 2.63-1.16 2.94-2.52.12-.51.11-1.04.11-1.56V0h2.91z"/>
-                    </svg>
-                  </a>
+                <div className="hc-right">
+                    <Socials />
+                    <button className="hc-burger" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}>
+                        {open ? <X size={22} /> : <Menu size={22} />}
+                    </button>
                 </div>
-              </div>
             </div>
-        )}
-      </header>
-  );
+        </header>
+    );
 };
+
 
 export default Header;
