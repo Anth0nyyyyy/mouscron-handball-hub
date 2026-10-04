@@ -243,7 +243,7 @@ const Team = () => {
         <section className="tm-teams-sec">
           <div className="tm-wrap">
             <div className="tm-gh center tm-reveal">
-              <span className="tm-eyebrow">Saison 2025-2026</span>
+              <span className="tm-eyebrow">Saison 2026-2027</span>
               <h2 className="big">Nos <em>équipes</em></h2>
             </div>
             <div className="tm-teams">
