@@ -47,11 +47,11 @@ const STORY = [
 ];
 
 const TEAMS = [
-  { src: '/lovable-uploads/WhatsApp_Image_2026-05-09_at_22.07.47 copy.jpeg', alt: 'Seniors HC Mouscron', label: 'Seniors' },
+  { src: '/lovable-uploads/WhatsApp_Image_2026-05-09_at_22.07.47 copy.jpeg', alt: 'Mini handball HC Mouscron', label: 'Senior' },
   { src: '/lovable-uploads/WhatsApp_Image_2026-04-27_at_10.58.05b copy.jpeg', alt: 'U14 HC Mouscron', label: 'U16' },
   { src: '/lovable-uploads/Capture d’écran 2026-08-12 131716.png', alt: 'U16 HC Mouscron', label: 'U14' },
-  { src: '/lovable-uploads/WhatsApp_Image_2026-04-22_at_21.43.51 copy.jpeg', alt: 'Mini Hand Mouscron', label: 'Mini Hand' },
-  { src: '/lovable-uploads/WhatsApp_Image_2025-10-01_at_06.45.20 copy.jpeg', alt: 'U18 HC Mouscron', label: 'U18' },
+  { src: '/lovable-uploads/WhatsApp_Image_2026-04-22_at_21.43.51 copy.jpeg', alt: 'U18 HC Mouscron', label: 'Mini Hand' },
+  { src: '/lovable-uploads/WhatsApp_Image_2025-10-01_at_06.45.20 copy.jpeg', alt: 'Seniors HC Mouscron', label: 'U18' },
   { src: '/lovable-uploads/3f691e54-6444-4b56-966f-fab9bcea6968.png', alt: 'Vétérans HC Mouscron', label: 'Vétérans' },
 ];
 
@@ -186,9 +186,9 @@ const Home = () => {
                   <i><MapPin size={22} /></i>
                   <div><b>Hall Max Lessines</b><span>Rue des Prés 84B, Mouscron</span></div>
                 </a>
-                <a href="mailto:handballmouscron@gmail.com">
+                <a href="mailto:secretariat.handballmouscron@gmail.com">
                   <i><Mail size={22} /></i>
-                  <div><b>Handballmouscron</b><span>handballmouscron@gmail.com</span></div>
+                  <div><b>Secrétariat</b><span>secretariat.handballmouscron@gmail.com</span></div>
                 </a>
               </div>
               <div className="hm-cta" style={{ marginTop: 32 }}>
