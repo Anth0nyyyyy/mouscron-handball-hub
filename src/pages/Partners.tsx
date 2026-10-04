@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Sun, Moon, ChevronLeft, ChevronRight, Eye, Users, MapPin, Send, Globe, Phone, Mail, Facebook, Instagram, Linkedin, Youtube, Twitter } from 'lucide-react';
+import { ExternalLink, Sun, Moon, ChevronLeft, ChevronRight, Eye, Users, MapPin, Send, Globe, Phone, Mail, Trophy, Flag, HeartHandshake, Tv, Newspaper, Sparkles, PiggyBank, Check, Camera } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { FacebookIcon, InstagramIcon, LinkedinIcon, YoutubeIcon, XIcon, TiktokIcon } from '@/components/BrandIcons';
 import { Link } from 'react-router-dom';
 import './Partners.css';
 
@@ -36,7 +38,6 @@ const partners: Partner[] = [
 type Kind = 'website' | 'facebook' | 'instagram' | 'tiktok' | 'linkedin' | 'youtube' | 'x' | 'phone' | 'email';
 type PLink = { kind: Kind; href: string; label: string; external: boolean };
 const LABEL: Record<Kind, string> = { website: 'Site web', facebook: 'Facebook', instagram: 'Instagram', tiktok: 'TikTok', linkedin: 'LinkedIn', youtube: 'YouTube', x: 'X', phone: 'Téléphone', email: 'E-mail' };
-const TIKTOK = 'M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.63 4.14 1.02 1.11 2.45 1.8 3.94 2.01v4.06c-1.74-.01-3.41-.65-4.73-1.68-.31-.24-.59-.51-.85-.8-.06 2.8-.03 5.6-.04 8.41-.05 1.94-.57 3.86-1.55 5.48-1.57 2.6-4.52 4.13-7.53 3.9-2.82-.12-5.46-1.75-6.72-4.27-1.55-2.91-1.25-6.81 1.05-9.39 1.65-1.92 4.1-2.96 6.6-2.84v4.18c-1.46-.14-2.98.37-3.87 1.48-.99 1.15-1.12 2.9-.38 4.18.73 1.34 2.37 2.1 3.9 1.87 1.4-.12 2.63-1.16 2.94-2.52.12-.51.11-1.04.11-1.56V0h2.91z';
 
 const detect = (url: string): Kind => {
   const u = url.toLowerCase();
@@ -64,14 +65,14 @@ const ext = (l: PLink) => (l.external ? { target: '_blank', rel: 'noopener noref
 
 const LinkIcon = ({ kind, size = 18 }: { kind: Kind; size?: number }) => {
   switch (kind) {
-    case 'facebook': return <Facebook size={size} />;
-    case 'instagram': return <Instagram size={size} />;
-    case 'linkedin': return <Linkedin size={size} />;
-    case 'youtube': return <Youtube size={size} />;
-    case 'x': return <Twitter size={size} />;
+    case 'facebook': return <FacebookIcon size={size} />;
+    case 'instagram': return <InstagramIcon size={size} />;
+    case 'linkedin': return <LinkedinIcon size={size} />;
+    case 'youtube': return <YoutubeIcon size={size} />;
+    case 'x': return <XIcon size={size} />;
+    case 'tiktok': return <TiktokIcon size={size} />;
     case 'phone': return <Phone size={size} />;
     case 'email': return <Mail size={size} />;
-    case 'tiktok': return <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true"><path d={TIKTOK} /></svg>;
     default: return <Globe size={size} />;
   }
 };
@@ -93,11 +94,41 @@ const FILTERS: { id: 'all' | Cat; label: string }[] = [
   { id: 'technique', label: 'Technique & Équipement' },
 ];
 
-// ⚠ Chiffres d'exemple : remplace-les par les vrais chiffres du club
-const STATS = [
-  { icon: Eye, value: '1 200 +', label: 'Spectateurs / match', text: 'Salle comble lors des grands chocs de championnat à domicile.' },
-  { icon: Users, value: '240', label: 'Joueurs & athlètes', text: "De l'école des jeunes aux seniors élite masculine & féminine." },
-  { icon: MapPin, value: '100 %', label: 'Ancrage régional', text: "Réseau d'affaires solidaire à Mouscron et Eurométropole." },
+// ---------------------------------------------------------------------------
+// CHIFFRES & CONTENU : repris du dossier de sponsoring HC Mouscron 2026-2027 (V19)
+// ---------------------------------------------------------------------------
+type Stat = { icon: LucideIcon; to?: number; value?: string; label: string; text: string };
+
+const CLUB_STATS: Stat[] = [
+  { icon: Trophy, value: '1er', label: 'Promotion Brabant-Hainaut', text: 'Équipe Seniors 2025-2026 : invaincue, meilleure attaque, 2e meilleure défense. Montée en D1 LFH.' },
+  { icon: Users, to: 70, label: 'Adhérents', text: 'Un club en évolution constante depuis 5 ans.' },
+  { icon: HeartHandshake, to: 15, label: 'Encadrants', text: 'Sportifs et administratifs : les forces vives qui font grandir le club.' },
+  { icon: Flag, to: 5, label: 'Équipes inscrites', text: 'En championnats wallons et flamands.' },
+];
+
+const REACH_STATS: Stat[] = [
+  { icon: Eye, to: 76823, label: 'Vues Facebook', text: 'Sur 30 jours (avril / mai) : 11 900 comptes touchés, +61,84 % d’évolution.' },
+  { icon: Camera, to: 29496, label: 'Vues Instagram', text: 'Sur 30 jours (avril / mai) : 4 296 comptes touchés, +243,07 % d’évolution.' },
+  { icon: Tv, to: 6, label: 'Reportages TV en 2026', text: 'Les médias traditionnels parlent aussi de nous.' },
+  { icon: Newspaper, to: 24, label: 'Reportages en 2025-26', text: 'Une couverture régulière tout au long de la saison.' },
+];
+
+const PILLARS = [
+  { icon: MapPin, title: 'Opportunités de proximité', words: ['Visibilité', 'Proximité', 'Notoriété'] },
+  { icon: Sparkles, title: 'Image positive', words: ['Famille', 'Respect', 'Passion'] },
+  { icon: HeartHandshake, title: 'Partage de valeurs', words: ["Esprit d'équipe", 'Solidarité', 'Engagement'] },
+  { icon: PiggyBank, title: 'Avantage fiscal *', words: ['Investissement', 'Valorisation', 'Optimisation'] },
+];
+
+// Formule « Découverte » : mets SHOW_PRICE à false pour ne pas afficher le prix sur le site
+const SHOW_PRICE = true;
+const DECOUVERTE = [
+  'Logo sur le set de table du repas',
+  "Affichage sur l'écran de la cafétéria",
+  'Présence sur toutes nos affiches',
+  'Affichage sur notre site internet',
+  'Affichage sur nos réseaux sociaux',
+  'Affichage sur notre panneau partenaires',
 ];
 
 const DUR = 4600;
@@ -114,6 +145,42 @@ const Logo = ({ p }: { p: Partner }) => {
       <img src={p.logo} alt={`${p.name} logo`} loading="lazy" onError={() => setErr(true)} />
   );
 };
+
+
+// Compteur animé : s'incrémente quand il apparaît à l'écran
+const Count = ({ to }: { to: number }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [v, setV] = useState(0);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setV(to); return; }
+    let raf = 0;
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      io.disconnect();
+      const t0 = performance.now();
+      const tick = (t: number) => {
+        const k = Math.min(1, (t - t0) / 1400);
+        setV(Math.round(to * (1 - Math.pow(1 - k, 3))));
+        if (k < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    });
+    io.observe(el);
+    return () => { io.disconnect(); cancelAnimationFrame(raf); };
+  }, [to]);
+  return <span ref={ref}>{v.toLocaleString('fr-FR')}</span>;
+};
+
+const StatCard = ({ s, i }: { s: Stat; i: number }) => (
+    <div className="pw-stat pw-reveal" style={{ '--i': i } as React.CSSProperties}>
+      <s.icon size={30} />
+      <b>{s.to !== undefined ? <Count to={s.to} /> : s.value}</b>
+      <strong>{s.label}</strong>
+      <p>{s.text}</p>
+    </div>
+);
 
 const Partners = () => {
   const [theme, setTheme] = useState<Theme>(() => {
@@ -193,9 +260,9 @@ const Partners = () => {
         {/* HERO + MUR ANIMÉ */}
         <section className="pw-hero">
           <div className="pw-hero-in">
-            <span className="pw-eyebrow"><i />Réseau Club Entreprises &amp; Mécènes • 2024-2025</span>
+            <span className="pw-eyebrow"><i />Réseau Club Entreprises &amp; Mécènes • 2026-2027</span>
             <h1><span>Partenaires officiels</span><em>L'énergie d'une ville</em></h1>
-            <p>Ils propulsent le Handball Club Mouscron vers les sommets. Découvrez les entreprises qui partagent nos valeurs de combativité, de respect et d'excellence sportive.</p>
+            <p>Un club en progression, une équipe championne, un avenir ambitieux. Découvrez les entreprises qui partagent nos valeurs : esprit d'équipe, solidarité, engagement, famille, respect et passion.</p>
           </div>
 
           <div className="pw-wall" style={cv(p.color)} onPointerMove={onWallMove}>
@@ -253,7 +320,7 @@ const Partners = () => {
                   </button>
               ))}
             </div>
-            <span className="pw-accr"><i />Accréditation saison 2024-2025</span>
+            <span className="pw-accr"><i />Accréditation saison 2026-2027</span>
           </div>
 
           <div className="pw-grid" key={filter}>
@@ -277,25 +344,68 @@ const Partners = () => {
           </div>
         </section>
 
-        {/* CHIFFRES */}
-        <section className="pw-sec pw-stats">
-          {STATS.map((s, i) => (
-              <div key={s.label} className="pw-stat pw-reveal" style={{ '--i': i } as React.CSSProperties}>
-                <s.icon size={30} />
-                <b>{s.value}</b>
-                <strong>{s.label}</strong>
-                <p>{s.text}</p>
-              </div>
-          ))}
+        {/* CHIFFRES RÉELS DU CLUB */}
+        <section className="pw-sec pw-statsec">
+          <div className="pw-sh pw-reveal">
+            <span className="pw-kicker">Le club en chiffres</span>
+            <h2>Une équipe championne, <em>un club en progression</em></h2>
+          </div>
+          <div className="pw-sgrid">
+            {CLUB_STATS.map((s, i) => <StatCard key={s.label} s={s} i={i} />)}
+          </div>
+
+          <div className="pw-sh pw-reveal pw-sh2">
+            <span className="pw-kicker">Une visibilité qui grandit</span>
+            <h2>Un public <em>qui nous suit</em></h2>
+          </div>
+          <div className="pw-sgrid">
+            {REACH_STATS.map((s, i) => <StatCard key={s.label} s={s} i={i} />)}
+          </div>
+        </section>
+
+        {/* POURQUOI DEVENIR PARTENAIRE */}
+        <section className="pw-sec pw-whysec">
+          <div className="pw-sh pw-reveal">
+            <span className="pw-kicker">Votre entreprise au cœur du terrain</span>
+            <h2>Pourquoi devenir <em>partenaire ?</em></h2>
+          </div>
+          <div className="pw-pillars">
+            {PILLARS.map((p, i) => (
+                <article key={p.title} className="pw-pillar pw-reveal" style={{ '--i': i } as React.CSSProperties}>
+                  <i><p.icon size={26} /></i>
+                  <h3>{p.title}</h3>
+                  <ul>{p.words.map((w) => <li key={w}>{w}</li>)}</ul>
+                </article>
+            ))}
+          </div>
+          <p className="pw-foot pw-reveal">* Les partenariats avec le HC Mouscron peuvent, selon leur nature et sous réserve des règles fiscales applicables, être considérés comme des frais de publicité déductibles.</p>
+
+          <div className="pw-offer pw-reveal">
+            <div className="pw-offer-l">
+              <span className="pw-kicker">Nouvelle formule</span>
+              <h3>Formule « Découverte »</h3>
+              <p>Sans exclusivité sectorielle : accessible à plusieurs entreprises d'un même secteur d'activité.</p>
+              {SHOW_PRICE && <div className="pw-price"><b>250 €</b><span>HTVA</span></div>}
+            </div>
+            <ul className="pw-offer-r">
+              {DECOUVERTE.map((d, i) => (
+                  <li key={d}>
+                    <i><Check size={16} /></i>
+                    <span>{d}</span>
+                    {i === DECOUVERTE.length - 1 && <em>New</em>}
+                  </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
         {/* CTA */}
         <section className="pw-sec pw-ctasec">
           <div className="pw-cta pw-reveal">
             <i className="pw-orb" />
-            <span className="pw-cpill">Partenariats &amp; Sponsoring 2024 - 2025</span>
+            <span className="pw-cpill">Partenariats &amp; Sponsoring 2026 - 2027</span>
             <h2>Vous souhaitez devenir partenaire ?</h2>
-            <p>Associez votre image aux valeurs d'engagement et de dépassement du HBC Mouscron. Rejoignez nos partenaires et soutenez le handball à Mouscron.</p>
+            <p>Envie de rejoindre l'aventure à nos côtés ? Venez nous rencontrer et échangeons ensemble : associez votre image aux valeurs d'engagement et de dépassement du HC Mouscron.</p>
             <Link to="/contact" className="pw-white"><Send size={16} /> Nous contacter</Link>
           </div>
         </section>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Phone, Mail, MapPin, Navigation, Facebook, Instagram, Sun, Moon } from 'lucide-react';
+import { Phone, Mail, MapPin, Navigation, Sun, Moon } from 'lucide-react';
+import { FacebookIcon, InstagramIcon, TiktokIcon } from '@/components/BrandIcons';
 import ContactForm from '@/components/contact/ContactForm'; // ⚠ utilisé TEL QUEL : l'envoi (EmailJS / Supabase) n'est pas modifié
 import './Contact.css';
 
@@ -13,7 +14,6 @@ const PHONE_LINK = 'tel:+32467328424';
 const EMAIL = 'secretariat.handballmouscron@gmail.com';
 const MAPS = 'https://www.google.com/maps/search/?api=1&query=Hall+Max+Lessines,+Rue+des+Prés+84B,+7700+Mouscron,+Belgium';
 const MAP_EMBED = 'https://www.google.com/maps?q=Hall+Max+Lessines,+Rue+des+Pr%C3%A9s+84B,+7700+Mouscron&output=embed';
-const TIKTOK = 'M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.63 4.14 1.02 1.11 2.45 1.8 3.94 2.01v4.06c-1.74-.01-3.41-.65-4.73-1.68-.31-.24-.59-.51-.85-.8-.06 2.8-.03 5.6-.04 8.41-.05 1.94-.57 3.86-1.55 5.48-1.57 2.6-4.52 4.13-7.53 3.9-2.82-.12-5.46-1.75-6.72-4.27-1.55-2.91-1.25-6.81 1.05-9.39 1.65-1.92 4.1-2.96 6.6-2.84v4.18c-1.46-.14-2.98.37-3.87 1.48-.99 1.15-1.12 2.9-.38 4.18.73 1.34 2.37 2.1 3.9 1.87 1.4-.12 2.63-1.16 2.94-2.52.12-.51.11-1.04.11-1.56V0h2.91z';
 
 const contactInfo = [
   { icon: Phone, title: 'Téléphone', lines: [PHONE], href: PHONE_LINK, cta: 'Appeler' },
@@ -29,9 +29,9 @@ const staff = [
 ];
 
 const socials = [
-  { label: 'Facebook', href: 'https://www.facebook.com/HCMouscron', icon: <Facebook size={20} /> },
-  { label: 'Instagram', href: 'https://www.instagram.com/hcmouscron/', icon: <Instagram size={20} /> },
-  { label: 'TikTok', href: 'https://www.tiktok.com/@hc.mouscron', icon: <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d={TIKTOK} /></svg> },
+  { label: 'Facebook', href: 'https://www.facebook.com/HCMouscron', icon: <FacebookIcon size={20} /> },
+  { label: 'Instagram', href: 'https://www.instagram.com/hcmouscron/', icon: <InstagramIcon size={20} /> },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@hc.mouscron', icon: <TiktokIcon size={20} /> },
 ];
 
 const initials = (n: string) => n.split(' ').map((w) => w[0]).slice(0, 2).join('');
