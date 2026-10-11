@@ -17,8 +17,8 @@ const MAP_EMBED = 'https://www.google.com/maps?q=Hall+Max+Lessines,+Rue+des+Pr%C
 
 const contactInfo = [
   { icon: Phone, title: 'Téléphone', lines: [PHONE], href: PHONE_LINK, cta: 'Appeler' },
-  { icon: Mail, title: 'Email', lines: [EMAIL, 'Réponse rapide par email'], href: `mailto:${EMAIL}`, cta: 'Écrire' },
   { icon: MapPin, title: 'Adresse', lines: ['Hall Max Lessines', 'Rue des Prés 84B, 7700 Mouscron'], href: MAPS, cta: 'Itinéraire' },
+  { icon: Mail, title: 'Email', lines: [EMAIL], href: `mailto:${EMAIL}`, cta: 'Écrire' },
 ];
 
 // Staff aligné avec la page Équipe (Damien Cockenpot = Président)
@@ -73,7 +73,7 @@ const Contact = () => {
           <div className="ct-ghosts" aria-hidden="true"><div className="ct-ghost">{ghost + ghost}</div><div className="ct-ghost r2">{ghost + ghost}</div></div>
           <i className="ct-orb a" /><i className="ct-orb b" />
           <div className="ct-hero-in">
-            <span className="ct-logo"><img src="/lovable-uploads/7f5485a2-eaa0-4a73-8e50-8de5813ec2f3.png" alt="Logo HC Mouscron" /></span>
+            <span className="ct-logo"><img src="/lovable-uploads/NewLogoHCM.jpeg" alt="Logo HC Mouscron" /></span>
             <h1><span>Contactez</span> <em>nous</em></h1>
             <p>Une question ? Envie de nous rejoindre ? Notre équipe vous répond rapidement pour tout renseignement sur le club ou le handball à Mouscron !</p>
           </div>

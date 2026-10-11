@@ -31,15 +31,37 @@ const Socials = () => (
 const Header = () => {
     const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [hidden, setHidden] = useState(false);
     const { pathname } = useLocation();
     const isActive = (href: string) => pathname === href;
 
+    // Se masque quand on descend dans la page, réapparaît dès qu'on remonte (jamais pendant que le menu mobile est ouvert)
     useEffect(() => {
-        const on = () => setScrolled(window.scrollY > 12);
+        let last = window.scrollY;
+        let busy = false;
+        const on = () => {
+            if (busy) return;
+            busy = true;
+            requestAnimationFrame(() => {
+                const y = window.scrollY;
+                setScrolled(y > 12);
+                if (open || y < 140) setHidden(false);
+                else if (y > last + 4) setHidden(true);
+                else if (y < last - 4) setHidden(false);
+                last = y;
+                busy = false;
+            });
+        };
         on();
         window.addEventListener('scroll', on, { passive: true });
         return () => window.removeEventListener('scroll', on);
-    }, []);
+    }, [open]);
+
+    // Les barres collantes des autres pages (filtres, sections) suivent la position de l'en-tête
+    useEffect(() => {
+        document.documentElement.style.setProperty('--hdr', hidden ? '10px' : '84px');
+        return () => { document.documentElement.style.setProperty('--hdr', '84px'); };
+    }, [hidden]);
 
     useEffect(() => setOpen(false), [pathname]);
 
@@ -51,7 +73,7 @@ const Header = () => {
     }, [open]);
 
     return (
-        <header className={`hc-h${scrolled ? ' sc' : ''}${open ? ' open' : ''}`}>
+        <header className={`hc-h${scrolled ? ' sc' : ''}${open ? ' open' : ''}${hidden && !open ? ' hide' : ''}`}>
 
             {/* Menu mobile plein écran */}
             <div className="hc-sheet" aria-hidden={!open}>
@@ -68,8 +90,8 @@ const Header = () => {
             {/* Capsule flottante */}
             <div className="hc-bar">
                 <Link to="/" className="hc-brand" aria-label="HC Mouscron - Accueil">
-                    <img src="/HCM_Logo_2025_fond_transparent.png" alt="HC Mouscron logo" />
-                    <span>HC<br />Mouscron</span>
+                    <img src="/lovable-uploads/NewLogoHCM.jpeg" alt="HC Mouscron logo" />
+                    <span><b>HC Mouscron</b><small>Since 2015</small></span>
                 </Link>
 
                 <nav className="hc-links" aria-label="Navigation principale">

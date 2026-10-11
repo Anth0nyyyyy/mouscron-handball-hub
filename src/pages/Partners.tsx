@@ -5,11 +5,11 @@ import { FacebookIcon, InstagramIcon, LinkedinIcon, YoutubeIcon, XIcon, TiktokIc
 import { Link } from 'react-router-dom';
 import './Partners.css';
 
-type Cat = 'majeurs' | 'finances' | 'sante' | 'technique';
+type Cat = 'finances' | 'sante' | 'technique';
 type Partner = {
   name: string;
   logo: string;
-  website: string;          // lien principal (site web, ou page Facebook si pas de site)
+  website?: string;         // lien principal (site web, ou page Facebook). Facultatif : sans lien, le bouton est simplement masqué
   socials?: string[];       // autres liens donnés par le partenaire : Facebook, Instagram, TikTok, LinkedIn, YouTube, X...
   phone?: string;           // ex. '+32 56 12 34 56'
   email?: string;           // ex. 'contact@partenaire.be'
@@ -23,14 +23,261 @@ type Partner = {
 // LISTE COMPLETE DES PARTENAIRES OFFICIELS
 // Pour ajouter les réseaux d'un partenaire, ajoute simplement : socials: ['https://www.instagram.com/...', 'https://www.facebook.com/...'], phone: '+32 ...', email: '...'
 const partners: Partner[] = [
-  { name: 'Crack', logo: '/lovable-uploads/d1b8c78d-2adc-4f0c-a684-d108bed1d3c5.png', website: 'https://www.crack.be/fr/', description: 'Meubles & Cuisines - Votre partenaire de confiance', tag: 'Habitat & Déco', badge: '★ Majeur', color: '#d01c1f', cats: ['majeurs'] },
-  { name: 'Fred Elec', logo: '/lovable-uploads/f847fff1-a2e3-4717-b1d4-85fe3bebe9f7.png', website: 'https://www.fred-electrique.com/fr/accueil', description: 'Solutions électriques professionnelles', tag: 'BTP & Énergie', badge: 'Technique', color: '#d97706', cats: ['technique'] },
-  { name: 'Acta Security', logo: '/lovable-uploads/919c9f3d-5770-47d1-8dcf-445e17bb9d18.png', website: 'https://www.acta-security.be/', description: 'Solutions de sécurité innovantes', tag: 'Télésurveillance', badge: 'Sécurité', color: '#e11d48', cats: ['technique'] },
-  { name: 'Banque CPH', logo: '/lovable-uploads/cph-banque.png', website: 'https://www.cph.be/', description: 'Banque & Assurances - Partenaire financier de proximité', tag: 'Proximité', badge: 'Banque', color: '#1e7a45', cats: ['majeurs', 'finances'] },
-  { name: 'Paramed Center Coquinie', logo: '/lovable-uploads/paramed-center-coquinie.jpg', website: 'https://www.facebook.com/ParamedCenterCoquinie', description: 'Centre paramédical à Mouscron (Kiné, Diététique, Logopédie)', tag: 'Kiné & Santé', badge: 'Santé', color: '#059669', cats: ['sante'] },
-  { name: 'Hoption', logo: '/lovable-uploads/hoption.jpg', website: 'https://hoptionmouscron.be/', description: 'Brasserie artisanale mouscronnoise - Bières uniques & authentiques.', tag: 'Terroir', badge: 'Artisan local', color: '#5a8f1e', cats: ['sante'] },
-  { name: 'GM Group', logo: '/lovable-uploads/gm-group.png', website: 'https://gm-groupe.be/', description: 'Assurances (DVV), Crédits & Immobilier à Mouscron', tag: 'Assurances & Immo', badge: 'Assurance', color: '#2447c4', cats: ['majeurs', 'finances'] },
-  { name: 'Océ Anniversaire', logo: '/lovable-uploads/oce-anniversaire-charlotte.jpg', website: 'https://www.facebook.com/profile.php?id=61586545933715', description: 'Anniversaire spa & beauté 100% girly à Mouscron', tag: 'Spa & Beauté', badge: 'Bien-être', color: '#db2777', cats: ['sante'] },
+  { // 2 000 €
+    name: 'Sols Concept',
+    logo: '/lovable-uploads/solconcept.png',
+    website: 'https://www.solsconcepts.com',
+    socials: [
+      'https://www.facebook.com/solsconcepts/',
+      'https://www.instagram.com/solsconcepts/',
+      'https://www.youtube.com/@SolsConceptsMouscron',
+      'https://www.linkedin.com/company/sols-concepts/?viewAsMember=true',
+    ],
+    description: 'Revêtements de sols',
+    tag: 'Revêtements de sols',
+    badge: 'Technique',
+    color: '#8a5a2b',
+    cats: ['technique'],
+  },
+  { // 2 000 €
+    name: 'Acta Security',
+    logo: '/lovable-uploads/919c9f3d-5770-47d1-8dcf-445e17bb9d18.png',
+    website: 'https://www.acta-security.be/',
+    socials: ['https://www.facebook.com/p/ACTA-Group-100063653186401/'],
+    description: 'Solutions de sécurité innovantes',
+    tag: 'Télésurveillance',
+    badge: 'Sécurité',
+    color: '#e11d48',
+    cats: ['technique'],
+  },
+  { // 1 800 €
+    name: 'WAPI Ambulance',
+    logo: '/lovable-uploads/wapi.png',
+    website: 'https://www.wapiambulance.be/',
+    socials: ['https://www.facebook.com/wapi.ambulance/'],
+    description: 'Ambulance et transport médical',
+    tag: 'Transport médical',
+    badge: 'Santé',
+    color: '#c2410c',
+    cats: ['sante'],
+  },
+  { // 1 200 €
+    name: 'Paramed Center Coquinie',
+    logo: '/lovable-uploads/paramed-center-coquinie.jpg',
+    website: 'https://www.facebook.com/ParamedCenterCoquinie',
+    description: 'Centre paramédical à Mouscron (Kiné, Diététique, Logopédie)',
+    tag: 'Kiné & Santé',
+    badge: 'Santé',
+    color: '#059669',
+    cats: ['sante'],
+  },
+  { // 1 000 €
+    name: 'Fred Elec',
+    logo: '/lovable-uploads/f847fff1-a2e3-4717-b1d4-85fe3bebe9f7.png',
+    website: 'https://www.fred-electrique.com/fr/accueil',
+    socials: ['https://www.facebook.com/fredelectrique1/'],
+    description: 'Solutions électriques professionnelles',
+    tag: 'BTP & Énergie',
+    badge: 'Technique',
+    color: '#d97706',
+    cats: ['technique'],
+  },
+  { // 1 000 €
+    name: 'AVM Construct',
+    logo: '/lovable-uploads/avm.jpg',
+    website: 'https://www.avmconstruct.com',
+    socials: ['https://www.facebook.com/avmconstruct/'],
+    description: 'Tout pour l’aménagement et la construction',
+    tag: 'Construction',
+    badge: 'Technique',
+    color: '#0f766e',
+    cats: ['technique'],
+  },
+  { // 1 000 €
+    name: 'Ets JP Carrelage',
+    logo: '/lovable-uploads/logo-jpcarrelage.png',
+    website: 'https://www.jpcarrelage.be/',
+    socials: ['https://www.facebook.com/jpcarrelage12/'],
+    description: 'Carrelage',
+    tag: 'Carrelage',
+    badge: 'Technique',
+    color: '#7c3aed',
+    cats: ['technique'],
+  },
+  { // 1 000 €
+    name: 'Vivien Bonduel Chauffage',
+    logo: '/lovable-uploads/logo-vivienbonduel.png',
+    website: 'https://www.vivienbonduel.com',
+    socials: ['https://www.facebook.com/VivienBonduelChauffage/'],
+    description: 'Chauffage',
+    tag: 'Chauffage',
+    badge: 'Technique',
+    color: '#0369a1',
+    cats: ['technique'],
+  },
+  { // 900 €
+    name: 'GM Group',
+    logo: '/lovable-uploads/gm-group.png',
+    website: 'https://gm-groupe.be/',
+    socials: [
+      'https://www.facebook.com/gmgroupesa/',
+      'https://www.instagram.com/gmgroupesa/',
+    ],
+    description: 'Assurances (DVV), Crédits & Immobilier à Mouscron',
+    tag: 'Assurances & Immo',
+    badge: 'Assurance',
+    color: '#2447c4',
+    cats: ['finances'],
+  },
+  { // 700 €
+    name: 'Tradeco',
+    logo: '/lovable-uploads/TRADECO_Logo_Couleurs_SVG.svg',
+    website: 'https://www.tradeco.be/',
+    socials: [
+      'https://www.facebook.com/TradecoBelgium/',
+      'https://www.instagram.com/tradeco_belgium/',
+      'https://www.linkedin.com/company/tradeco-belgium-s-a/',
+    ],
+    description: 'Partenaire officiel du HC Mouscron',
+    tag: 'Partenaire officiel',
+    badge: 'Partenaire',
+    color: '#b91c1c',
+    cats: [],
+  },
+  { // 500 €
+    name: 'Copaint',
+    logo: '/lovable-uploads/Copaint.png',
+    website: 'https://www.copaint.be/fr/home-fr/',
+    socials: ['https://www.facebook.com/people/Copaint/100057213199100/'],
+    description: 'Peinture',
+    tag: 'Peinture',
+    badge: 'Technique',
+    color: '#0891b2',
+    cats: ['technique'],
+  },
+  { // 400 €
+    name: 'Themis',
+    logo: '/lovable-uploads/friterie-du-themis.jpg',
+    website: 'https://themis-mouscron.be/friterie/',
+    socials: [
+      'https://www.facebook.com/FriterieThemis/',
+      'https://www.instagram.com/FriterieThemis/',
+    ],
+    description: 'Partenaire officiel du HC Mouscron',
+    tag: 'Partenaire officiel',
+    badge: 'Partenaire',
+    color: '#4338ca',
+    cats: [],
+  },
+  { // 250 €
+    name: 'Banque CPH',
+    logo: '/lovable-uploads/cph-banque.png',
+    website: 'https://www.cph.be/',
+    socials: [
+      'https://www.facebook.com/cphbanque',
+      'https://www.linkedin.com/company/banque-cph-scrl/',
+      'https://www.youtube.com/channel/UCtaBfbPZat3mdSRLc4V0Idw',
+    ],
+    description: 'Banque & Assurances - Partenaire financier de proximité',
+    tag: 'Proximité',
+    badge: 'Banque',
+    color: '#1e7a45',
+    cats: ['finances'],
+  },
+  { // 250 €
+    name: 'Mobireve',
+    logo: '/lovable-uploads/moirêve.png',
+    website: 'https://www.mobireve.biz/',
+    socials: ['https://www.facebook.com/mobireveliterie'],
+    description: 'Partenaire officiel du HC Mouscron',
+    tag: 'Partenaire officiel',
+    badge: 'Partenaire',
+    color: '#be185d',
+    cats: [],
+  },
+  { // 250 €
+    name: 'Océ Anniversaire',
+    logo: '/lovable-uploads/oce-anniversaire-charlotte.jpg',
+    website: 'https://www.facebook.com/profile.php?id=61586545933715',
+    socials: ['https://www.instagram.com/oce_anniversaire/'],
+    description: 'Anniversaire spa & beauté 100% girly à Mouscron',
+    tag: 'Spa & Beauté',
+    badge: 'Bien-être',
+    color: '#db2777',
+    cats: ['sante'],
+  },
+  { // 150 € + caisses de bière
+    name: 'Hoption',
+    logo: '/lovable-uploads/hoption.jpg',
+    website: 'https://hoptionmouscron.be/',
+    socials: [
+      'https://www.facebook.com/hoptionmouscron',
+      'https://www.instagram.com/hoptionmouscron',
+    ],
+    description: 'Brasserie artisanale mouscronnoise - Bières uniques & authentiques.',
+    tag: 'Terroir',
+    badge: 'Artisan local',
+    color: '#5a8f1e',
+    cats: ['sante'],
+  },
+  { // gagné, montant non renseigné (même contact que Sols Concept)
+    name: 'Espace Arthur',
+    logo: '/lovable-uploads/Elberg.jpg',
+    website: 'https://www.elberg.be/espacearthur',
+    socials: [
+      'https://www.facebook.com/Elberg.Mouscron/',
+      'https://www.instagram.com/elbergmouscron/',
+      'https://www.youtube.com/@hotelelbergmouscron-espace5763',
+    ],
+    description: 'Partenaire officiel du HC Mouscron',
+    tag: 'Partenaire officiel',
+    badge: 'Partenaire',
+    color: '#a16207',
+    cats: [],
+  },
+  { // gagné, montant non renseigné (même contact que Sols Concept)
+    name: 'Zanutti',
+    logo: '/lovable-uploads/zanutti.png',
+    website: 'https://www.zanutti.com/',
+    socials: [
+      'https://www.facebook.com/zanuttisrl/',
+      'https://www.instagram.com/zanuttisrl/',
+      'https://www.linkedin.com/company/zanutti/',
+      'https://www.youtube.com/@Zanuttisrl',
+    ],
+    description: 'Partenaire officiel du HC Mouscron',
+    tag: 'Partenaire officiel',
+    badge: 'Partenaire',
+    color: '#15803d',
+    cats: [],
+  },
+  { // statut « en cours » (attente RDV), rien versé
+    name: 'Crack',
+    logo: '/lovable-uploads/d1b8c78d-2adc-4f0c-a684-d108bed1d3c5.png',
+    website: 'https://www.crack.be/fr/',
+    socials: [
+      'https://www.facebook.com/meubelencrack',
+      'https://www.pinterest.com/meublescuisinescrack/',
+    ],
+    description: 'Meubles & Cuisines - Votre partenaire de confiance',
+    tag: 'Habitat & Déco',
+    badge: 'Habitat',
+    color: '#d01c1f',
+    cats: ['technique'],
+  },
+  // Partners.tsx : à insérer dans `partners`, juste avant l'entrée « Crack »
+// ...reste inchangé
+  { // montant non renseigné
+    name: 'OLinvest',
+    logo: '/lovable-uploads/olinvest.png', // à uploader (voir note)
+    website: 'https://www.olinvest.be/',
+    socials: ['https://www.facebook.com/olinvest.be'],
+    description: 'Assurances, Crédits & Placements',
+    tag: 'Assurances & Crédits',
+    badge: 'Assurance',
+    color: '#1d4ed8',
+    cats: ['finances'],
+  }
 ];
 
 
@@ -54,7 +301,7 @@ const detect = (url: string): Kind => {
 
 // Le 1er lien est toujours le lien principal ; les suivants sont affichés en icônes
 const getLinks = (p: Partner): PLink[] => {
-  const raw = [p.website, ...(p.socials ?? []), p.phone ? `tel:${p.phone.replace(/\s/g, '')}` : '', p.email ? `mailto:${p.email}` : ''].filter(Boolean);
+  const raw = [p.website ?? '', ...(p.socials ?? []), p.phone ? `tel:${p.phone.replace(/\s/g, '')}` : '', p.email ? `mailto:${p.email}` : ''].filter(Boolean) as string[];
   const seen = new Set<string>();
   return raw
       .filter((h) => (seen.has(h) ? false : (seen.add(h), true)))
@@ -88,7 +335,6 @@ const Socials = ({ links, className = '' }: { links: PLink[]; className?: string
 
 const FILTERS: { id: 'all' | Cat; label: string }[] = [
   { id: 'all', label: 'Tous les partenaires' },
-  { id: 'majeurs', label: 'Partenaires majeurs' },
   { id: 'finances', label: 'Finances & Assurances' },
   { id: 'sante', label: 'Santé & Artisans' },
   { id: 'technique', label: 'Technique & Équipement' },
@@ -137,8 +383,8 @@ const cv = (c: string, extra: Record<string, string | number> = {}) => ({ '--c':
 
 // Logo avec repli (initiale) si l'image est introuvable
 const Logo = ({ p }: { p: Partner }) => {
-  const [err, setErr] = useState(false);
-  useEffect(() => setErr(false), [p.logo]);
+  const [err, setErr] = useState(!p.logo);
+  useEffect(() => setErr(!p.logo), [p.logo]);
   return err ? (
       <span className="pw-mono" style={{ color: p.color }}>{p.name.charAt(0)}</span>
   ) : (
@@ -192,6 +438,9 @@ const Partners = () => {
   });
   const [cur, setCur] = useState(0);
   const [filter, setFilter] = useState<'all' | Cat>('all');
+  const [tax, setTax] = useState(false);
+  const [speed, setSpeed] = useState(1); // 1x -> 2x -> 4x
+  const cycleSpeed = () => setSpeed((s) => (s === 1 ? 2 : s === 2 ? 4 : 1));
   const root = useRef<HTMLDivElement>(null);
   const tabs = useRef<HTMLDivElement>(null);
   const n = partners.length;
@@ -211,9 +460,9 @@ const Partners = () => {
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const id = setTimeout(() => setCur((c) => (c + 1) % n), DUR);
+    const id = setTimeout(() => setCur((c) => (c + 1) % n), DUR / speed);
     return () => clearTimeout(id);
-  }, [cur, n]);
+  }, [cur, n, speed]);
 
   // Centre l'onglet actif dans la barre, sans jamais faire défiler la page
   useEffect(() => {
@@ -250,20 +499,22 @@ const Partners = () => {
   const onCardLeave = (e: React.PointerEvent<HTMLDivElement>) => { e.currentTarget.style.transform = ''; };
 
   const ghost = partners.map((x) => x.name).join(' ✦ ') + ' ✦ ';
-  const ticker = partners.map((x) => (
+  const chips = (list: Partner[]) => list.map((x) => (
       <span key={x.name} className="pw-chip" style={cv(x.color)}><span className="pw-thumb"><Logo p={x} /></span><b>{x.name}</b><i>{x.tag}</i></span>
   ));
+  const ticker = chips(partners);
 
   return (
-      <div className="pw" data-theme={theme} ref={root} style={{ '--dur': `${DUR}ms` } as React.CSSProperties}>
+      <div className="pw" data-theme={theme} ref={root} style={{ '--dur': `${DUR / speed}ms` } as React.CSSProperties}>
+
+        {/* BANDEAU DÉFILANT : tout en haut de la page */}
+        <div className="pw-ticker" aria-hidden="true">
+          <div className="pw-track">{ticker}{ticker}{ticker}{ticker}</div>
+        </div>
 
         {/* HERO + MUR ANIMÉ */}
         <section className="pw-hero">
-          <div className="pw-hero-in">
-            <span className="pw-eyebrow"><i />Réseau Club Entreprises &amp; Mécènes • 2026-2027</span>
-            <h1><span>Partenaires officiels</span><em>L'énergie d'une ville</em></h1>
-            <p>Un club en progression, une équipe championne, un avenir ambitieux. Découvrez les entreprises qui partagent nos valeurs : esprit d'équipe, solidarité, engagement, famille, respect et passion.</p>
-          </div>
+          <h1 className="pw-sr">Partenaires officiels : l'énergie d'une ville</h1>
 
           <div className="pw-wall" style={cv(p.color)} onPointerMove={onWallMove}>
             <div className="pw-spot" />
@@ -272,15 +523,16 @@ const Partners = () => {
               <div className="pw-ghost r2" style={{ top: '52%' }}>{ghost + ghost}</div>
             </div>
             <div className="pw-main">
-              <div className="min-w-0">
+              <div className="pw-left">
                 <div className="pw-count"><b>{String(cur + 1).padStart(2, '0')}</b><i /><span>/ {String(n).padStart(2, '0')} partenaires</span></div>
                 <h2 key={`n${cur}`} className={`pw-name pw-in ${size}`}>{p.name}</h2>
                 <p key={`t${cur}`} className="pw-wtag pw-in">{p.tag}</p>
                 <Socials key={`s${cur}`} links={extra} className="pw-in" />
                 <div className="pw-actions">
-                  <a className="pw-btn" href={main.href} {...ext(main)}>{mainLabel(main)} <ExternalLink size={16} /></a>
                   <button className="pw-arrow" aria-label="Partenaire précédent" onClick={() => setCur((cur - 1 + n) % n)}><ChevronLeft size={20} /></button>
                   <button className="pw-arrow" aria-label="Partenaire suivant" onClick={() => setCur((cur + 1) % n)}><ChevronRight size={20} /></button>
+                  <button className="pw-arrow pw-speed" aria-label={`Vitesse ${speed}x`} title="Vitesse de défilement" onClick={cycleSpeed}>{speed}x</button>
+                  {main && <a className="pw-btn" href={main.href} {...ext(main)}>{mainLabel(main)} <ExternalLink size={16} /></a>}
                 </div>
               </div>
               <div className="pw-3d">
@@ -288,7 +540,7 @@ const Partners = () => {
                   <div className="pw-rim" />
                   <div className="pw-face">
                     <div key={`c${cur}`} className="pw-face-in">
-                      <a className="pw-logotile" href={main.href} {...ext(main)} title={`${mainLabel(main)} : ${p.name}`}><Logo p={p} /></a>
+                      {main ? <a className="pw-logotile" href={main.href} {...ext(main)} title={`${mainLabel(main)} : ${p.name}`}><Logo p={p} /></a> : <div className="pw-logotile"><Logo p={p} /></div>}
                       <div className="pw-fname">{p.name}</div>
                       <div className="pw-ftag">{p.tag}</div>
                       <div className="pw-foot">HBC MOUSCRON × PARTENAIRE</div>
@@ -307,9 +559,6 @@ const Partners = () => {
           </div>
         </section>
 
-        {/* BANDEAU DÉFILANT */}
-        <div className="pw-ticker" aria-hidden="true"><div className="pw-track">{ticker}{ticker}{ticker}{ticker}</div></div>
-
         {/* FILTRES + CARTES */}
         <section className="pw-sec">
           <div className="pw-filters" role="tablist">
@@ -320,7 +569,6 @@ const Partners = () => {
                   </button>
               ))}
             </div>
-            <span className="pw-accr"><i />Accréditation saison 2026-2027</span>
           </div>
 
           <div className="pw-grid" key={filter}>
@@ -328,15 +576,22 @@ const Partners = () => {
               const xl = getLinks(x);
               return (
                   <article key={x.name} className="pw-card pw-reveal" style={cv(x.color, { '--i': i % 4 })}>
-                    <a className="pw-logo" href={xl[0].href} {...ext(xl[0])} title={`${mainLabel(xl[0])} : ${x.name}`}>
-                      <Logo p={x} />
-                      <span className={`pw-badge${x.badge.startsWith('★') ? ' major' : ''}`}>{x.badge}</span>
-                    </a>
+                    {xl[0] ? (
+                        <a className="pw-logo" href={xl[0].href} {...ext(xl[0])} title={`${mainLabel(xl[0])} : ${x.name}`}>
+                          <Logo p={x} />
+                          <span className={`pw-badge${x.badge.startsWith('★') ? ' major' : ''}`}>{x.badge}</span>
+                        </a>
+                    ) : (
+                        <div className="pw-logo">
+                          <Logo p={x} />
+                          <span className={`pw-badge${x.badge.startsWith('★') ? ' major' : ''}`}>{x.badge}</span>
+                        </div>
+                    )}
                     <div className="pw-body">
                       <div className="pw-row"><h3>{x.name}</h3><em>{x.tag}</em></div>
                       <p>{x.description}</p>
                       <Socials links={xl.slice(1)} />
-                      <a className="pw-visit" href={xl[0].href} {...ext(xl[0])}>{mainLabel(xl[0])} <ExternalLink size={14} /></a>
+                      {xl[0] && <a className="pw-visit" href={xl[0].href} {...ext(xl[0])}>{mainLabel(xl[0])} <ExternalLink size={14} /></a>}
                     </div>
                   </article>
               );
@@ -370,16 +625,29 @@ const Partners = () => {
             <h2>Pourquoi devenir <em>partenaire ?</em></h2>
           </div>
           <div className="pw-pillars">
-            {PILLARS.map((p, i) => (
-                <article key={p.title} className="pw-pillar pw-reveal" style={{ '--i': i } as React.CSSProperties}>
-                  <i><p.icon size={26} /></i>
-                  <h3>{p.title}</h3>
-                  <ul>{p.words.map((w) => <li key={w}>{w}</li>)}</ul>
-                </article>
-            ))}
+            {PILLARS.map((p, i) => {
+              const fiscal = p.title.includes('*');
+              return (
+                  <article
+                      key={p.title}
+                      className="pw-pillar pw-reveal"
+                      style={{ '--i': i } as React.CSSProperties}
+                      {...(fiscal ? {
+                        role: 'button',
+                        tabIndex: 0,
+                        'aria-expanded': tax,
+                        onClick: () => setTax((v) => !v),
+                        onKeyDown: (e: React.KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setTax((v) => !v); } },
+                      } : {})}
+                  >
+                    <i><p.icon size={26} /></i>
+                    <h3>{p.title}</h3>
+                    <ul>{p.words.map((w) => <li key={w}>{w}</li>)}</ul>
+                  </article>
+              );
+            })}
           </div>
-          <p className="pw-foot pw-reveal">* Les partenariats avec le HC Mouscron peuvent, selon leur nature et sous réserve des règles fiscales applicables, être considérés comme des frais de publicité déductibles.</p>
-
+          {tax && <p className="pw-tax" role="note">* Les partenariats avec le HC Mouscron peuvent, selon leur nature et sous réserve des règles fiscales applicables, être considérés comme des frais de publicité déductibles.</p>}
           <div className="pw-offer pw-reveal">
             <div className="pw-offer-l">
               <span className="pw-kicker">Nouvelle formule</span>

@@ -23,8 +23,8 @@ const Footer = () => (
           {/* Marque */}
           <div className="hc-f-brand">
             <div className="hc-f-id">
-              <img src="/lovable-uploads/7f5485a2-eaa0-4a73-8e50-8de5813ec2f3.png" alt="HC Mouscron logo" />
-              <span>HC Mouscron</span>
+              <img src="/lovable-uploads/NewLogoHCM.jpeg" alt="HC Mouscron logo" />
+              <span>HC Mouscron<small>Since 2015</small></span>
             </div>
             <p>Club de handball passionné basé à Mouscron. Venez partager votre passion du handball dans une ambiance chaleureuse, dynamique et sportive !</p>
             <div className="hc-f-soc">
@@ -62,7 +62,7 @@ const Footer = () => (
           </div>
         </div>
 
-        <div className="hc-f-mark" aria-hidden="true">HC Mouscron</div>
+        <div className="hc-f-mark" aria-hidden="true">HC Mouscron<small>Since 2015</small></div>
 
         <div className="hc-f-bottom">
           <p>© 2025 HC Mouscron. Tous droits réservés.</p>

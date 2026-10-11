@@ -27,13 +27,13 @@
 .ct-hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--o2),var(--o1));-webkit-background-clip:text;background-clip:text;color:transparent;animation-delay:.22s}
 @keyframes ctin{from{opacity:0;transform:translateY(40px) skewY(3deg);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
 .ct-hero p{max-width:640px;margin:20px auto 0;color:var(--mute);font-size:clamp(15px,1.9vw,19px);line-height:1.65;animation:ctin .9s .35s cubic-bezier(.16,1,.3,1) both}
-.ct-tiles{position:relative;z-index:2;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));max-width:1060px;margin:clamp(28px,4vw,44px) auto 0}
-.ct-tile{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:22px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow);color:var(--ink);text-decoration:none;text-align:left;animation:ctin .9s calc(.45s + var(--i)*.1s) cubic-bezier(.16,1,.3,1) both;transition:transform .35s,border-color .3s,box-shadow .35s,background-color .35s}
+.ct-tiles{position:relative;z-index:2;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));grid-auto-rows:1fr;max-width:1060px;margin:clamp(28px,4vw,44px) auto 0}
+.ct-tile{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:12px;padding:24px 18px 20px;height:100%;border-radius:22px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow);color:var(--ink);text-decoration:none;text-align:center;animation:ctin .9s calc(.45s + var(--i)*.1s) cubic-bezier(.16,1,.3,1) both;transition:transform .35s,border-color .3s,box-shadow .35s,background-color .35s}
 .ct-tile i{flex:none;width:52px;height:52px;display:grid;place-items:center;border-radius:16px;color:#fff;background:linear-gradient(135deg,var(--o1),var(--o2));transition:transform .5s}
-.ct-tile span{flex:1;min-width:0}
+.ct-tile span{flex:1;min-width:0;width:100%}
 .ct-tile b{display:block;font:400 24px/1 'Bebas Neue',Impact,sans-serif;letter-spacing:.06em;text-transform:uppercase}
-.ct-tile em{display:block;margin-top:3px;font-style:normal;color:var(--mute);font-size:13px;line-height:1.35;overflow-wrap:anywhere}
-.ct-tile u{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;background:var(--surface2);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .3s,color .3s}
+.ct-tile em{display:block;margin-top:5px;font-style:normal;color:var(--mute);font-size:13px;line-height:1.35;overflow-wrap:anywhere}
+.ct-tile u{flex:none;margin-top:auto;text-decoration:none;padding:6px 12px;border-radius:999px;background:var(--surface2);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .3s,color .3s}
 @media(hover:hover){.ct-tile:hover{transform:translateY(-6px);border-color:var(--o1);box-shadow:0 28px 54px -26px hsl(var(--hc-orange) / .65)}.ct-tile:hover i{transform:rotate(-10deg) scale(1.1)}.ct-tile:hover u{background:var(--o1);color:#fff}}
 /* grille principale */
 .ct-grid{display:grid;gap:clamp(18px,3vw,32px);align-items:start}
@@ -69,7 +69,7 @@
 @keyframes ctup{from{opacity:0;transform:translateY(32px)}}
 .ct-toggle{position:fixed;z-index:60;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:8px;padding:11px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:700 13px/1 system-ui,sans-serif;cursor:pointer;box-shadow:var(--shadow);transition:transform .25s,background-color .35s}
 .ct-toggle:hover{transform:scale(1.06)}.ct-toggle svg{color:var(--o1)}
-@media(max-width:480px){.ct-toggle span{display:none}.ct-toggle{padding:13px}.ct-tile u{display:none}}
+@media(max-width:480px){.ct-toggle span{display:none}.ct-toggle{padding:13px}}
 @media(prefers-reduced-motion:reduce){.ct *,.ct *::before,.ct *::after{animation:none!important;transition:none!important}.ct-reveal{opacity:1!important}}
 
 /* ===== ContactForm d'origine (shadcn) : habillé uniquement par le CSS, son code n'est pas modifié ===== */

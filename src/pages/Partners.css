@@ -1,22 +1,22 @@
 /* Partners.css — styles de Partners.tsx
-   Les couleurs viennent de index.css (--hc-green, --hc-orange, ...).
+   Les couleurs viennent de index.css (--hc-green #1C4827, --hc-orange #E74506, ...).
    Les polices viennent aussi de index.css : Bebas Neue (titres) et Montserrat (texte). */
 .pw{font-synthesis:none}
 .pw{--o1:hsl(var(--hc-orange));--o2:hsl(var(--hc-orange-light));--g1:hsl(var(--hc-green));--g2:hsl(var(--hc-green-light));background:var(--bg);color:var(--ink);min-height:100vh;overflow-x:clip;transition:background-color .35s,color .35s}
-.pw[data-theme=dark]{--bg:hsl(151 80% 4%);--hero:linear-gradient(180deg,hsl(151 88% 3%),hsl(151 80% 5%) 55%,hsl(151 80% 4%));--surface:hsl(151 62% 9%);--surface2:hsl(151 55% 13%);--ink:hsl(140 30% 96%);--mute:hsl(145 20% 78%);--line:rgba(255,255,255,.1);--accent:hsl(26 100% 68%);--shadow:0 28px 60px -26px rgba(0,0,0,.85);--wall:linear-gradient(160deg,hsl(151 70% 8%),hsl(151 88% 3%));--ghost:rgba(255,255,255,.08);--ghost2:hsl(26 100% 60% / .16);--bar:rgba(0,0,0,.3);--tab:rgba(255,255,255,.04);--tabon:rgba(255,255,255,.1);--sp:24%;--strip:hsl(151 90% 3%);--chipbg:rgba(255,255,255,.04)}
-.pw[data-theme=light]{--bg:hsl(140 22% 98%);--hero:linear-gradient(180deg,hsl(140 30% 99%),hsl(148 38% 93%) 55%,hsl(140 22% 98%));--surface:#fff;--surface2:hsl(148 38% 94%);--ink:hsl(151 70% 7%);--mute:hsl(150 14% 36%);--line:hsl(151 60% 10% / .12);--accent:hsl(25 98% 36%);--shadow:0 26px 50px -24px rgba(15,42,27,.32);--wall:linear-gradient(160deg,#fff,hsl(148 38% 92%));--ghost:hsl(151 60% 10% / .08);--ghost2:hsl(25 98% 45% / .22);--bar:rgba(255,255,255,.72);--tab:rgba(15,42,27,.04);--tabon:#fff;--sp:16%;--strip:hsl(148 38% 91%);--chipbg:#fff}
+.pw[data-theme=dark]{--bg:hsl(135 44% 5%);--hero:linear-gradient(180deg,hsl(135 50% 4%),hsl(135 44% 6%) 55%,hsl(135 44% 5%));--surface:hsl(135 40% 10%);--surface2:hsl(135 36% 14%);--ink:hsl(130 25% 96%);--mute:hsl(135 14% 76%);--line:rgba(255,255,255,.1);--accent:hsl(17 95% 62%);--shadow:0 28px 60px -26px rgba(0,0,0,.85);--wall:linear-gradient(160deg,hsl(135 44% 9%),hsl(135 50% 4%));--ghost:rgba(255,255,255,.08);--ghost2:hsl(17 95% 56% / .18);--bar:rgba(0,0,0,.3);--tab:rgba(255,255,255,.04);--tabon:rgba(255,255,255,.1);--sp:24%;--strip:hsl(135 50% 4%);--chipbg:rgba(255,255,255,.04)}
+.pw[data-theme=light]{--bg:hsl(135 18% 98%);--hero:linear-gradient(180deg,hsl(135 25% 99%),hsl(135 24% 93%) 55%,hsl(135 18% 98%));--surface:#fff;--surface2:hsl(135 24% 94%);--ink:hsl(135 44% 9%);--mute:hsl(135 10% 34%);--line:hsl(135 44% 14% / .12);--accent:hsl(17 95% 38%);--shadow:0 26px 50px -24px rgba(28,72,39,.3);--wall:linear-gradient(160deg,#fff,hsl(135 24% 92%));--ghost:hsl(135 44% 14% / .08);--ghost2:hsl(17 95% 46% / .22);--bar:rgba(255,255,255,.72);--tab:rgba(28,72,39,.05);--tabon:#fff;--sp:16%;--strip:hsl(135 24% 91%);--chipbg:#fff}
 .pw *{box-sizing:border-box}
 .pw h1,.pw h2,.pw h3,.pw-count,.pw-name,.pw-tab b,.pw-fname,.pw-chip b,.pw-stat b,.pw-stat strong{font-family:'Bebas Neue','Oswald',Impact,sans-serif;text-transform:uppercase}
 .pw button:focus-visible,.pw a:focus-visible{outline:2px solid var(--o2);outline-offset:3px}
 /* hero */
-.pw-hero{position:relative;background:var(--hero);padding:clamp(40px,7vw,72px) clamp(12px,3vw,32px) clamp(36px,5vw,56px);border-bottom:1px solid var(--line);transition:background .35s}
+.pw-hero{position:relative;background:var(--hero);padding:clamp(20px,3vw,34px) clamp(12px,3vw,32px) clamp(36px,5vw,56px);border-bottom:1px solid var(--line);transition:background .35s}
 .pw-hero-in{max-width:1280px;margin:0 auto clamp(26px,4vw,44px)}
 .pw-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--tab);color:var(--accent);font-size:clamp(10px,1.4vw,12px);font-weight:700;letter-spacing:.2em;text-transform:uppercase}
 .pw-eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--o2);animation:pwdot 1.6s ease-in-out infinite}
 @keyframes pwdot{50%{opacity:.35;transform:scale(.7)}}
 .pw-hero h1{margin:22px 0 0;font-weight:800;line-height:.9;letter-spacing:.02em}
 .pw-hero h1 span{display:block;font-size:clamp(44px,9vw,92px)}
-.pw-hero h1 em{display:block;font-style:normal;font-size:clamp(34px,7vw,72px);background:linear-gradient(100deg,var(--o2),hsl(38 100% 58%) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pw-hero h1 em{display:block;font-style:normal;font-size:clamp(34px,7vw,72px);background:linear-gradient(100deg,var(--o2),var(--o1) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .pw-hero p{max-width:640px;margin:20px 0 0;color:var(--mute);font-size:clamp(14px,1.8vw,17px);line-height:1.65}
 /* mur */
 .pw-wall{--mx:50%;--my:30%;--cc:var(--c);position:relative;max-width:1280px;margin:0 auto;border-radius:clamp(20px,3vw,30px);overflow:hidden;border:1px solid var(--line);background:var(--wall);box-shadow:var(--shadow);transition:background .35s}
@@ -36,8 +36,14 @@
 .pw-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:26px}
 .pw-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:700;font-size:14px;color:#fff;text-decoration:none;background:linear-gradient(100deg,var(--o1),var(--o2));box-shadow:0 12px 26px -12px hsl(var(--hc-orange) / .8);transition:transform .25s,box-shadow .3s}
 .pw-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px hsl(var(--hc-orange) / .9)}
-.pw-arrow{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:var(--tab);color:var(--ink);cursor:pointer;transition:background .25s,transform .25s}
+.pw-arrow{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:var(--tab);color:var(--ink);cursor:pointer;transition:background .25s,transform .25s}
 .pw-arrow:hover{background:var(--tabon);transform:scale(1.08)}
+.pw-speed{width:auto;min-width:48px;padding:0 14px;border-radius:999px;font:700 13px/1 'Montserrat',system-ui,sans-serif}
+/* colonne gauche : hauteur fixe, boutons ancrés en bas -> les flèches ne bougent JAMAIS */
+.pw-left{position:relative;min-width:0;min-height:440px;padding-bottom:76px}
+.pw-left .pw-actions{position:absolute;left:0;bottom:0;margin:0;flex-wrap:nowrap}
+@media(min-width:1024px){.pw-left{height:440px}}
+@media(max-width:480px){.pw-left{min-height:480px;padding-bottom:128px}.pw-left .pw-actions{flex-wrap:wrap}}
 .pw-in{animation:pwin .8s cubic-bezier(.16,1,.3,1) both}
 @keyframes pwin{from{opacity:0;transform:translateY(32px) skewY(2deg);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
 @keyframes pwcard{from{opacity:0;transform:scale(.88) rotate(-3deg)}to{opacity:1;transform:none}}
@@ -47,14 +53,14 @@
 .pw-rim{position:absolute;inset:0;border-radius:28px;overflow:hidden}
 .pw-rim::before{content:'';position:absolute;inset:-60%;background:conic-gradient(from 0deg,transparent 0 55%,var(--cc) 78%,transparent 90%);animation:pwspin 4.5s linear infinite}
 @keyframes pwspin{to{transform:rotate(360deg)}}
-.pw-face{position:absolute;inset:3px;border-radius:25px;overflow:hidden;background:linear-gradient(160deg,hsl(var(--hc-green-light)),hsl(151 88% 4%) 72%);color:#fff}
+.pw-face{position:absolute;inset:3px;border-radius:25px;overflow:hidden;background:linear-gradient(160deg,hsl(var(--hc-green-light)),hsl(135 50% 5%) 72%);color:#fff}
 .pw-face::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(260px circle at var(--gx) var(--gy),rgba(255,255,255,.2),transparent 60%)}
 .pw-face-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:22px;text-align:center;animation:pwcard .9s cubic-bezier(.16,1,.3,1) both}
 .pw-logotile{width:100%;height:42%;min-height:104px;display:flex;align-items:center;justify-content:center;padding:14px;border-radius:18px;background:#fff;box-shadow:0 0 50px -10px var(--cc);transform:translateZ(50px)}
 .pw-logotile img,.pw-logo img{max-width:100%;max-height:100%;object-fit:contain}
 .pw-mono{font:800 64px/1 'Bebas Neue','Oswald',Impact,sans-serif}
 .pw-fname{margin-top:12px;font-size:clamp(26px,4vw,34px);font-weight:800;line-height:1;transform:translateZ(36px)}
-.pw-ftag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:hsl(145 30% 80%);transform:translateZ(26px)}
+.pw-ftag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:hsl(135 20% 80%);transform:translateZ(26px)}
 .pw-foot{position:absolute;bottom:16px;font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.4)}
 .pw-tabs{position:relative;display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding:14px clamp(12px,3vw,24px);border-top:1px solid var(--line);background:var(--bar);backdrop-filter:blur(8px);scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .pw-tabs::-webkit-scrollbar{display:none}
@@ -66,11 +72,14 @@
 .pw-tab.on em{animation:pwfill var(--dur) linear forwards}
 @keyframes pwfill{to{transform:scaleX(1)}}
 @media(hover:hover){.pw-tab:hover{transform:translateY(-2px)}}
-/* bandeau */
-.pw-ticker{overflow:hidden;background:var(--strip);border-bottom:1px solid var(--line);padding:14px 0;transition:background .35s;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.pw-track{display:flex;gap:16px;width:max-content;animation:pwscroll 60s linear infinite}
-.pw-chip{display:inline-flex;align-items:center;gap:12px;padding:10px 20px;border-radius:12px;border:1px solid var(--line);background:var(--chipbg);white-space:nowrap}
-.pw-chip b{font-size:22px;font-weight:800;line-height:1;color:var(--c)}.pw-chip i{font-style:normal;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+/* bandeau (un seul, tout en haut) */
+.pw-ticker{display:block;overflow:hidden;background:var(--strip);border-bottom:1px solid var(--line);padding:8px 0;transition:background .35s;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.pw-track{display:flex;gap:10px;width:max-content;animation:pwscroll 60s linear infinite}
+.pw-ticker:hover .pw-track{animation-play-state:paused}
+.pw-chip{display:inline-flex;align-items:center;gap:9px;padding:5px 14px 5px 6px;border-radius:999px;border:1px solid var(--line);background:var(--chipbg);white-space:nowrap}
+.pw-chip b{font-size:17px;font-weight:800;line-height:1;color:var(--c)}
+.pw-chip i{font-style:normal;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.pw-chip .pw-thumb{width:28px;height:28px;padding:3px;border-radius:50%}
 .pw[data-theme=dark] .pw-chip b{color:color-mix(in srgb,var(--c) 62%,#fff)}
 /* sections */
 .pw-sec{max-width:1344px;margin:0 auto;padding:clamp(28px,4vw,48px) clamp(14px,3vw,32px) 0}
@@ -81,21 +90,25 @@
 .pw-fl button.on{color:#fff;background:linear-gradient(100deg,var(--o1),var(--o2));box-shadow:0 10px 22px -12px hsl(var(--hc-orange) / .9)}
 .pw-accr{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;background:var(--surface2);color:var(--accent);font:700 12px/1 'Bebas Neue','Oswald',Impact,sans-serif;letter-spacing:.14em;text-transform:uppercase}
 .pw-accr i{width:7px;height:7px;border-radius:50%;background:#34d399}
-.pw-grid{display:grid;gap:clamp(16px,2.4vw,26px);grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr))}
+/* grille des cartes partenaires : 6 par ligne sur grand écran */
+.pw-grid{display:grid;gap:clamp(10px,1.2vw,16px);grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:560px){.pw-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:860px){.pw-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:1100px){.pw-grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
 .pw-reveal{opacity:0}.pw-reveal.in{opacity:1;animation:pwup .75s cubic-bezier(.16,1,.3,1) backwards;animation-delay:calc(var(--i,0)*80ms)}
 @keyframes pwup{from{opacity:0;transform:translateY(28px)}}
-.pw-card{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s,background-color .35s}
-@media(hover:hover){.pw-card:hover{transform:translateY(-8px);border-color:var(--c);box-shadow:0 30px 60px -26px var(--c)}.pw-logo:hover img{transform:scale(1.06)}}
-.pw-logo{position:relative;display:flex;align-items:center;justify-content:center;height:clamp(150px,20vw,190px);padding:26px;background:#fff}
+.pw-card{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s,background-color .35s}
+@media(hover:hover){.pw-card:hover{transform:translateY(-6px);border-color:var(--c);box-shadow:0 26px 50px -26px var(--c)}.pw-logo:hover img{transform:scale(1.06)}}
+.pw-logo{position:relative;display:flex;align-items:center;justify-content:center;height:clamp(96px,10vw,124px);padding:16px;background:#fff}
 .pw-logo img{transition:transform .35s}
-.pw-badge{position:absolute;top:10px;right:10px;padding:5px 11px;border-radius:999px;font:800 10px/1 'Bebas Neue','Oswald',Impact,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--c);background:color-mix(in srgb,var(--c) 11%,#fff);border:1px solid color-mix(in srgb,var(--c) 30%,#fff)}
-.pw-badge.major{color:hsl(25 98% 32%);background:hsl(28 100% 94%);border-color:hsl(25 90% 80%)}
-.pw-body{display:flex;flex:1;flex-direction:column;gap:10px;padding:20px 20px 22px}
-.pw-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
-.pw-row h3{margin:0;font-size:26px;font-weight:800;line-height:1.05;color:var(--ink)}
-.pw-row em{font-style:normal;font:700 11px/1.2 'Bebas Neue','Oswald',Impact,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-align:right}
-.pw-body p{margin:0 0 14px;color:var(--mute);font-size:14px;line-height:1.6}
-.pw-visit{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);font:700 13px/1 'Bebas Neue','Oswald',Impact,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s,border-color .3s}
+.pw-badge{position:absolute;top:8px;right:8px;padding:4px 8px;border-radius:999px;font:800 9px/1 'Bebas Neue','Oswald',Impact,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--c);background:color-mix(in srgb,var(--c) 11%,#fff);border:1px solid color-mix(in srgb,var(--c) 30%,#fff)}
+.pw-badge.major{color:hsl(17 95% 32%);background:hsl(17 100% 95%);border-color:hsl(17 90% 82%)}
+.pw-body{display:flex;flex:1;flex-direction:column;gap:8px;padding:14px 14px 16px}
+.pw-row{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.pw-row h3{margin:0;font-size:20px;font-weight:800;line-height:1.05;color:var(--ink)}
+.pw-row em{font-style:normal;font:700 10px/1.2 'Bebas Neue','Oswald',Impact,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-align:left}
+.pw-body p{margin:0 0 6px;color:var(--mute);font-size:12px;line-height:1.5}
+.pw-visit{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 8px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);font:700 12px/1 'Bebas Neue','Oswald',Impact,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;text-align:center;transition:background .3s,color .3s,border-color .3s}
 .pw-visit:hover{background:linear-gradient(100deg,var(--o1),var(--o2));border-color:transparent;color:#fff}
 /* chiffres */
 .pw-stats{display:grid;gap:clamp(14px,2vw,24px);grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));padding-top:clamp(36px,5vw,64px)}
@@ -106,7 +119,7 @@
 .pw-stat p{margin:10px 0 0;color:var(--mute);font-size:14px;line-height:1.55}
 /* CTA */
 .pw-ctasec{padding-bottom:clamp(80px,10vw,110px);padding-top:clamp(36px,5vw,64px)}
-.pw-cta{position:relative;overflow:hidden;text-align:center;color:#fff;padding:clamp(34px,6vw,64px) clamp(20px,5vw,56px);border-radius:28px;background:linear-gradient(100deg,hsl(var(--hc-orange)),hsl(25 98% 38%) 50%,hsl(var(--hc-green)));box-shadow:0 30px 70px -28px hsl(var(--hc-orange) / .6)}
+.pw-cta{position:relative;overflow:hidden;text-align:center;color:#fff;padding:clamp(34px,6vw,64px) clamp(20px,5vw,56px);border-radius:28px;background:linear-gradient(100deg,hsl(var(--hc-orange)),hsl(17 95% 36%) 50%,hsl(var(--hc-green)));box-shadow:0 30px 70px -28px hsl(var(--hc-orange) / .6)}
 .pw-orb{position:absolute;right:-110px;bottom:-130px;width:320px;height:320px;border-radius:50%;background:rgba(0,0,0,.35);filter:blur(50px);pointer-events:none}
 .pw-cpill{display:inline-block;position:relative;padding:7px 16px;border-radius:999px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.2);font:800 12px/1 'Bebas Neue','Oswald',Impact,sans-serif;letter-spacing:.2em;text-transform:uppercase}
 .pw-cta h2{position:relative;margin:18px auto 14px;max-width:760px;font-size:clamp(32px,6vw,62px);font-weight:800;line-height:.98}
@@ -128,8 +141,9 @@
 .pw-soc{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .pw-soc a{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line);background:var(--tab);color:var(--ink);text-decoration:none;transition:background .25s,color .25s,transform .25s,border-color .25s}
 .pw-soc a:hover{background:var(--c);border-color:var(--c);color:#fff;transform:translateY(-3px)}
-.pw-body .pw-soc{margin:0 0 4px;gap:6px}
-.pw-body .pw-soc a{width:36px;height:36px}
+.pw-body .pw-soc{margin:0 0 2px;gap:5px}
+.pw-body .pw-soc a{width:30px;height:30px}
+.pw-body .pw-soc a svg{width:14px;height:14px}
 
 /* chiffres réels + pourquoi devenir partenaire + formule découverte */
 .pw-kicker{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
@@ -143,12 +157,13 @@
 .pw-pillars{display:grid;gap:clamp(12px,1.8vw,18px);grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
 .pw-pillar{padding:26px 22px;border-radius:24px;color:#fff;background:linear-gradient(160deg,var(--g2),var(--g1));border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);transition:transform .35s}
 @media(hover:hover){.pw-pillar:hover{transform:translateY(-8px)}}
+.pw-pillar[role=button]{cursor:pointer}
 .pw-pillar>i{display:grid;place-items:center;width:52px;height:52px;margin-bottom:14px;border-radius:16px;background:linear-gradient(135deg,var(--o1),var(--o2))}
 .pw-pillar h3{margin:0;font-size:30px;line-height:1;letter-spacing:.04em}
 .pw-pillar ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
-.pw-pillar li{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:hsl(38 100% 92%)}
+.pw-pillar li{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:hsl(17 100% 94%)}
 .pw-pillar li::before{content:'';flex:none;width:8px;height:8px;border-radius:50%;background:var(--o2)}
-.pw-foot{max-width:760px;margin:18px auto 0;text-align:center;color:var(--mute);font-size:12px;line-height:1.6}
+.pw-tax{max-width:760px;margin:18px auto 0;padding:14px 18px;text-align:center;color:var(--mute);font-size:13px;line-height:1.6;border:1px solid var(--line);border-radius:14px;background:var(--surface);animation:pwup .5s cubic-bezier(.16,1,.3,1) both}
 .pw-offer{display:grid;gap:clamp(18px,3vw,36px);margin-top:clamp(30px,5vw,52px);padding:clamp(22px,4vw,44px);border-radius:30px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
 @media(min-width:860px){.pw-offer{grid-template-columns:1fr 1.2fr;align-items:center}}
 .pw-offer h3{margin:10px 0 0;font-size:clamp(34px,5vw,54px);line-height:1}
@@ -162,3 +177,5 @@
 .pw-offer-r li i{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:9px;color:#fff;background:linear-gradient(135deg,var(--g2),var(--g1))}
 .pw-offer-r li span{flex:1}
 .pw-offer-r li em{font-style:normal;padding:3px 9px;border-radius:999px;background:var(--o1);color:#fff;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+/* titre de la page conservé pour les lecteurs d'écran et Google, mais invisible */
+.pw-sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}

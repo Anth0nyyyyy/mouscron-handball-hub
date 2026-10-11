@@ -5,24 +5,22 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   DESIGN SYSTEM — Charte graphique HC Mouscron (v2)
-   Couleurs relevées sur la flyer « Formule Découverte » :
-     Vert profond  #03301A   (fonds, titres, boutons)
-     Vert forêt    #0B472A   (dégradés, survols)
-     Orange vif    #E25E02   (accents, appels à l'action)
-     Orange clair  #FF7418   (survols, lueurs)
-     Papier        #F8F8F8   (zones claires de la flyer)
+   DESIGN SYSTEM — Charte graphique HC Mouscron (v3)
+   Deux couleurs de marque pour TOUT le site :
+     Vert    #1C4827   (fonds, titres, boutons)
+     Orange  #E74506   (accents, appels à l'action)
+   Le reste (clair / pâle / papier) en est dérivé.
    ========================================================================== */
 
 @layer base {
   :root {
     /* --- Palette de marque (HSL) --- */
-    --hc-green: 151 88% 10%;          /* #03301A  Vert profond */
-    --hc-green-light: 151 74% 16%;    /* #0B472A  Vert forêt */
-    --hc-green-soft: 148 38% 92%;     /* #E4F1E9  Vert très pâle (cartes, badges) */
-    --hc-orange: 25 98% 45%;          /* #E25E02  Orange vif */
-    --hc-orange-light: 26 100% 55%;   /* #FF7418  Orange clair */
-    --hc-orange-soft: 28 100% 94%;    /* #FFEFE0  Orange très pâle */
+    --hc-green: 135 44% 19.6%;        /* #1C4827  Vert */
+    --hc-green-light: 135 44% 28%;    /* Vert plus clair (dégradés, survols) */
+    --hc-green-soft: 135 30% 92%;     /* Vert très pâle (cartes, badges) */
+    --hc-orange: 17 95% 46.5%;        /* #E74506  Orange */
+    --hc-orange-light: 17 95% 56%;    /* Orange plus clair (survols, lueurs) */
+    --hc-orange-soft: 17 100% 94%;    /* Orange très pâle */
     --hc-paper: 0 0% 97%;             /* #F8F8F8  Papier */
 
     /* --- Dégradés & ombres de marque --- */
@@ -33,88 +31,88 @@
     --shadow-orange: 0 18px 40px -16px hsl(var(--hc-orange) / 0.7);
 
     /* --- Tokens shadcn/ui (mode clair) --- */
-    --background: 140 22% 98%;
-    --foreground: 151 70% 6%;
+    --background: 135 18% 98%;
+    --foreground: 135 44% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 151 70% 6%;
+    --card-foreground: 135 44% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 151 70% 6%;
+    --popover-foreground: 135 44% 9%;
 
-    --primary: 151 88% 10%;
+    --primary: 135 44% 19.6%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 98% 45%;
+    --secondary: 17 95% 46.5%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 142 20% 94%;
-    --muted-foreground: 150 14% 36%;
+    --muted: 135 16% 94%;
+    --muted-foreground: 135 10% 34%;
 
-    --accent: 28 100% 94%;
-    --accent-foreground: 25 98% 32%;
+    --accent: 17 100% 94%;
+    --accent-foreground: 17 95% 32%;
 
     --destructive: 0 78% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 145 16% 88%;
-    --input: 145 16% 88%;
-    --ring: 25 98% 45%;
+    --border: 135 14% 88%;
+    --input: 135 14% 88%;
+    --ring: 17 95% 46.5%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 140 22% 97%;
-    --sidebar-foreground: 151 40% 20%;
-    --sidebar-primary: 151 88% 10%;
+    --sidebar-background: 135 18% 97%;
+    --sidebar-foreground: 135 40% 20%;
+    --sidebar-primary: 135 44% 19.6%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 148 38% 92%;
-    --sidebar-accent-foreground: 151 88% 10%;
-    --sidebar-border: 145 16% 88%;
-    --sidebar-ring: 25 98% 45%;
+    --sidebar-accent: 135 30% 92%;
+    --sidebar-accent-foreground: 135 44% 19.6%;
+    --sidebar-border: 135 14% 88%;
+    --sidebar-ring: 17 95% 46.5%;
   }
 
   .dark {
-    --hc-green-soft: 151 45% 14%;
-    --hc-orange-soft: 25 70% 16%;
-    --hc-paper: 151 40% 10%;
+    --hc-green-soft: 135 40% 14%;
+    --hc-orange-soft: 17 70% 16%;
+    --hc-paper: 135 36% 10%;
     --shadow-green: 0 24px 50px -22px rgb(0 0 0 / 0.8);
 
-    --background: 151 80% 4%;          /* #021A0E */
-    --foreground: 140 30% 96%;
+    --background: 135 44% 5%;
+    --foreground: 130 25% 96%;
 
-    --card: 151 70% 6%;
-    --card-foreground: 140 30% 96%;
+    --card: 135 40% 7%;
+    --card-foreground: 130 25% 96%;
 
-    --popover: 151 70% 6%;
-    --popover-foreground: 140 30% 96%;
+    --popover: 135 40% 7%;
+    --popover-foreground: 130 25% 96%;
 
-    --primary: 25 98% 50%;
-    --primary-foreground: 151 88% 6%;
+    --primary: 17 95% 50%;
+    --primary-foreground: 135 44% 6%;
 
-    --secondary: 151 55% 20%;
-    --secondary-foreground: 140 30% 96%;
+    --secondary: 135 44% 22%;
+    --secondary-foreground: 130 25% 96%;
 
-    --muted: 151 45% 12%;
-    --muted-foreground: 145 16% 70%;
+    --muted: 135 36% 12%;
+    --muted-foreground: 135 14% 70%;
 
-    --accent: 151 55% 16%;
-    --accent-foreground: 26 100% 62%;
+    --accent: 135 44% 16%;
+    --accent-foreground: 17 95% 62%;
 
     --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 151 40% 15%;
-    --input: 151 40% 15%;
-    --ring: 26 100% 55%;
+    --border: 135 34% 16%;
+    --input: 135 34% 16%;
+    --ring: 17 95% 56%;
 
-    --sidebar-background: 151 80% 5%;
-    --sidebar-foreground: 140 30% 92%;
-    --sidebar-primary: 25 98% 50%;
-    --sidebar-primary-foreground: 151 88% 6%;
-    --sidebar-accent: 151 45% 12%;
-    --sidebar-accent-foreground: 140 30% 96%;
-    --sidebar-border: 151 40% 15%;
-    --sidebar-ring: 26 100% 55%;
+    --sidebar-background: 135 44% 5%;
+    --sidebar-foreground: 130 25% 92%;
+    --sidebar-primary: 17 95% 50%;
+    --sidebar-primary-foreground: 135 44% 6%;
+    --sidebar-accent: 135 36% 12%;
+    --sidebar-accent-foreground: 130 25% 96%;
+    --sidebar-border: 135 34% 16%;
+    --sidebar-ring: 17 95% 56%;
   }
 }
 

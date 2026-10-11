@@ -2,7 +2,7 @@
    Les couleurs viennent de index.css (--hc-green, --hc-orange, ...).
    Les polices viennent aussi de index.css : Bebas Neue (titres) et Montserrat (texte). */
 .hc-h{font-synthesis:none}
-.hc-h{position:sticky;top:0;z-index:50;padding:10px clamp(10px,2vw,28px);pointer-events:none;font-family:'Bebas Neue','Oswald',Impact,sans-serif}
+.hc-h{position:sticky;top:0;transition:top .45s cubic-bezier(.16,1,.3,1);z-index:50;padding:10px clamp(10px,2vw,28px);pointer-events:none;font-family:'Bebas Neue','Oswald',Impact,sans-serif}
 .hc-h *{box-sizing:border-box}
 .hc-bar{position:relative;z-index:1;pointer-events:auto;max-width:1280px;margin:0 auto;height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px 8px 8px;border-radius:999px;color:#fff;
     background:var(--gradient-brand);border:1px solid rgba(255,255,255,.22);
@@ -12,7 +12,9 @@
 .hc-brand img{width:54px;height:54px;border-radius:50%;background:#fff;padding:3px;object-fit:contain;box-shadow:0 6px 16px -6px rgba(0,0,0,.5);transition:width .3s,height .3s,transform .3s}
 .hc-h.sc .hc-brand img{width:44px;height:44px}
 .hc-brand:hover img{transform:rotate(-8deg) scale(1.06)}
-.hc-brand span{font-size:20px;font-weight:800;line-height:.9;letter-spacing:.06em;text-transform:uppercase}
+.hc-brand span{display:block;text-transform:uppercase}
+.hc-brand b{display:block;font-size:23px;font-weight:800;line-height:1;letter-spacing:.07em}
+.hc-brand small{display:block;margin-top:5px;font:700 10px/1 Montserrat,system-ui,sans-serif;letter-spacing:.34em;color:hsl(38 100% 90%)}
 .hc-links{display:none;align-items:center;gap:4px;padding:5px;border-radius:999px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.14)}
 .hc-links a{position:relative;padding:9px 20px;border-radius:999px;color:#fff;text-decoration:none;font-size:19px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:background .25s,color .25s}
 .hc-links a:hover{background:rgba(255,255,255,.14)}
@@ -39,3 +41,5 @@
 .hc-sheet .hc-soc{margin-top:28px}.hc-sheet .hc-soc a{width:48px;height:48px;background:rgba(255,255,255,.16)}
 @media(max-width:380px){.hc-brand span{display:none}}
 @media(prefers-reduced-motion:reduce){.hc-h *{transition:none!important}}
+
+.hc-h.hide{top:-150px}

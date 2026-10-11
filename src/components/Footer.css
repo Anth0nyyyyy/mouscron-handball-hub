@@ -40,3 +40,6 @@
 .hc-f-bottom button:hover{transform:translateY(-3px);background:rgba(255,255,255,.3)}
 .hc-f a:focus-visible,.hc-f button:focus-visible{outline:2px solid hsl(38 100% 90%);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.hc-f *{transition:none!important}}
+
+.hc-f-id small{display:block;margin-top:7px;font:700 11px/1 Montserrat,system-ui,sans-serif;letter-spacing:.34em;color:hsl(38 100% 90%);text-shadow:none}
+.hc-f-mark small{display:block;margin-top:12px;font:700 clamp(12px,1.6vw,18px)/1 Montserrat,system-ui,sans-serif;letter-spacing:.7em;padding-left:.7em;-webkit-text-stroke:0;-webkit-text-fill-color:rgba(255,255,255,.85);color:rgba(255,255,255,.85)}
