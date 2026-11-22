@@ -1,0 +1,55 @@
+/* Page Partenaires */
+
+/* ---------- Liste ---------- */
+.partner-grid { list-style: none; display: grid; gap: 40px 28px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
+.partner { display: flex; flex-direction: column; }
+.partner-logo {
+  transition: border-color .2s, transform .25s cubic-bezier(.2, .7, .2, 1), box-shadow .25s;
+  display: grid; place-items: center; height: 140px; padding: 22px;
+  background: #fff; border: 1px solid var(--rule); border-radius: var(--radius);
+}
+.partner:hover .partner-logo { transform: translateY(-4px); border-color: var(--orange); box-shadow: 0 14px 28px -18px rgba(16, 48, 26, .5); }
+.partner-logo img { max-height: 92px; max-width: 100%; object-fit: contain; }
+.partner-initial { font: 400 56px/1 'Bebas Neue', Impact, sans-serif; color: var(--green); }
+.partner h3 { margin-top: 14px; font-size: 26px; }
+.partner-tag { font-size: 14px; font-weight: 700; color: var(--accent-text); }
+.partner-desc { margin-top: 6px; font-size: 14px; color: var(--mute); }
+.partner-links { margin-top: auto; padding-top: 12px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.partner-links .link { font-size: 14px; }
+.partner-icons { display: flex; gap: 4px; }
+.partner-icons a {
+  width: 36px; height: 36px; display: grid; place-items: center; border-radius: var(--radius);
+  color: var(--mute); border: 1px solid var(--rule);
+}
+.partner-icons a:hover { color: var(--heading); border-color: var(--heading); }
+
+/* ---------- Devenir partenaire ---------- */
+.sub-title { margin: 48px 0 18px; }
+
+.pillars { list-style: none; margin-top: 28px; border-top: 3px solid var(--heading); }
+.pillars li { display: grid; gap: 4px 24px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+@media (min-width: 700px) { .pillars li { grid-template-columns: 18em 1fr; } }
+.pillars span { color: var(--mute); }
+
+/* ---------- Formules ---------- */
+.offers { display: grid; gap: 36px 28px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.offer { border-top: 3px solid var(--heading); padding-top: 16px; }
+.offer h3 { font-size: 40px; }
+.offer-pitch { margin-top: 6px; color: var(--mute); }
+.offer-price { margin-top: 14px; }
+.offer-price b { font: 400 34px/1 'Bebas Neue', Impact, sans-serif; color: var(--accent-text); }
+.offer-price span { font-size: 14px; color: var(--mute); }
+.offer-meta { margin-top: 4px; font-size: 14px; font-weight: 600; }
+.offer ul { list-style: none; margin-top: 14px; display: grid; gap: 8px; }
+.offer li { position: relative; padding-left: 18px; font-size: 15px; }
+.offer li::before { content: ''; position: absolute; left: 0; top: .6em; width: 8px; height: 2px; background: var(--orange); }
+
+/* ---------- Appel final ---------- */
+.partner-cta {
+  position: relative; overflow: hidden; isolation: isolate;
+  background: var(--green); color: #fff; padding: clamp(36px, 6vw, 72px);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%);
+}
+.partner-cta::before { content: ""; position: absolute; z-index: -1; right: -6%; top: -30%; width: 22%; height: 160%; background: var(--orange); transform: skewX(-24deg); }
+.partner-cta h2 { color: #fff; }
+.partner-cta p { margin-top: 14px; max-width: 56ch; color: rgba(255, 255, 255, .9); }

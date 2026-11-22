@@ -1,0 +1,57 @@
+/* Page Équipe */
+
+/* ---------- Équipes ---------- */
+.teams { display: grid; gap: 48px 28px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
+.team h3 { margin-top: 16px; font-size: 44px; transform: skewX(-6deg); transform-origin: left bottom; }
+.team-photo::after {
+  /* bande orange qui balaie la photo au survol */
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--orange);
+  transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.2, .7, .2, 1);
+}
+.team-photo:hover::after, .team-photo:focus-visible::after { transform: scaleX(1); }
+.team-photo {
+  position: relative; display: block; width: 100%; padding: 0; border: 0; background: var(--rule);
+  aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden;
+}
+.team-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+.team-photo:hover img { transform: scale(1.06); }
+.team-zoom {
+  position: absolute; right: 10px; bottom: 10px; width: 38px; height: 38px; display: grid; place-items: center;
+  border-radius: var(--radius); background: var(--green-deep); color: #fff;
+}
+.team dl { margin-top: 10px; display: grid; gap: 8px; }
+.team dl div { display: grid; grid-template-columns: 8.5em 1fr; gap: 12px; padding-top: 8px; border-top: 1px solid var(--rule); }
+.team dt { font-size: 14px; color: var(--mute); }
+.team dd { font-size: 15px; font-weight: 600; }
+.team .slot { display: block; }
+.team .slot::first-letter { text-transform: uppercase; }
+
+/* ---------- Staff ---------- */
+.people { list-style: none; display: grid; gap: 0 32px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); border-top: 3px solid var(--heading); }
+.people li { display: grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: start; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+.avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; background: var(--rule); }
+.people li:hover .avatar { box-shadow: 0 0 0 3px var(--orange); }
+.avatar { transition: box-shadow .2s; }
+.avatar.fallback { display: grid; place-items: center; background: var(--green); color: #fff; font: 400 28px/1 'Bebas Neue', Impact, sans-serif; }
+.people h3 { font-size: 26px; }
+.people .role { margin-top: 2px; font-size: 14px; font-weight: 700; color: var(--accent-text); }
+.people .desc { margin-top: 6px; font-size: 14px; line-height: 1.55; color: var(--mute); }
+
+.team-cta { border-top: 3px solid var(--heading); padding-top: 32px; }
+
+/* ---------- Photo agrandie ---------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 64px 16px;
+  background: rgba(6, 18, 10, .92);
+}
+.lightbox figure { max-width: min(1200px, 100%); }
+.lightbox img { max-height: calc(100svh - 160px); width: auto; margin: 0 auto; border-radius: var(--radius); }
+.lightbox figcaption { margin-top: 12px; text-align: center; color: #fff; font: 400 32px/1 'Bebas Neue', Impact, sans-serif; }
+.lb-btn {
+  position: absolute; width: 48px; height: 48px; display: grid; place-items: center;
+  border-radius: var(--radius); border: 1.5px solid rgba(255, 255, 255, .35); background: rgba(16, 48, 26, .6); color: #fff;
+}
+.lb-btn:hover { border-color: #fff; }
+.lb-close { top: 16px; right: 16px; }
+.lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
